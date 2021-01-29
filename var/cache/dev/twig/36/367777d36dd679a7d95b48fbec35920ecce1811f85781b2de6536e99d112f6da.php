@@ -55,19 +55,21 @@ class __TwigTemplate_9529eb3052795b4a0e8d7f0d062c303f1771764cff7907286ffd0236a44
         ";
         // line 6
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 7
+        // line 9
         echo "
         ";
-        // line 8
+        // line 10
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 9
+        // line 11
         echo "    </head>
     <body>
-        ";
-        // line 11
+        <div class=\"container\"> 
+            ";
+        // line 14
         $this->displayBlock('body', $context, $blocks);
-        // line 12
-        echo "    </body>
+        // line 15
+        echo "        </div>
+    </body>
 </html>
 ";
         
@@ -88,7 +90,6 @@ class __TwigTemplate_9529eb3052795b4a0e8d7f0d062c303f1771764cff7907286ffd0236a44
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Welcome!";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -107,6 +108,9 @@ class __TwigTemplate_9529eb3052795b4a0e8d7f0d062c303f1771764cff7907286ffd0236a44
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
+        // line 7
+        echo "            <link href=\"https://bootswatch.com/4/lux/bootstrap.css\" rel=\"stylesheet\"/>
+        ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -115,7 +119,7 @@ class __TwigTemplate_9529eb3052795b4a0e8d7f0d062c303f1771764cff7907286ffd0236a44
 
     }
 
-    // line 8
+    // line 10
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -133,7 +137,7 @@ class __TwigTemplate_9529eb3052795b4a0e8d7f0d062c303f1771764cff7907286ffd0236a44
 
     }
 
-    // line 11
+    // line 14
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -158,7 +162,7 @@ class __TwigTemplate_9529eb3052795b4a0e8d7f0d062c303f1771764cff7907286ffd0236a44
 
     public function getDebugInfo()
     {
-        return array (  137 => 11,  119 => 8,  101 => 6,  82 => 5,  70 => 12,  68 => 11,  64 => 9,  62 => 8,  59 => 7,  57 => 6,  53 => 5,  47 => 1,);
+        return array (  141 => 14,  123 => 10,  112 => 7,  102 => 6,  84 => 5,  71 => 15,  69 => 14,  64 => 11,  62 => 10,  59 => 9,  57 => 6,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -167,15 +171,19 @@ class __TwigTemplate_9529eb3052795b4a0e8d7f0d062c303f1771764cff7907286ffd0236a44
 <html>
     <head>
         <meta charset=\"UTF-8\">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        <title>{% block title %}{% endblock %}</title>
+        {% block stylesheets %}
+            <link href=\"https://bootswatch.com/4/lux/bootstrap.css\" rel=\"stylesheet\"/>
+        {% endblock %}
 
         {% block javascripts %}{% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        <div class=\"container\"> 
+            {% block body %}{% endblock %}
+        </div>
     </body>
 </html>
-", "base.html.twig", "C:\\Users\\rodet\\Desktop\\GED-project\\templates\\base.html.twig");
+", "base.html.twig", "C:\\Users\\rodet\\Documents\\GitHub\\GED-project\\templates\\base.html.twig");
     }
 }
