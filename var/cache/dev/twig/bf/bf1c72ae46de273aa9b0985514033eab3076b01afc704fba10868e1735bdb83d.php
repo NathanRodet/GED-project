@@ -65,7 +65,6 @@ class __TwigTemplate_60802c7cf628e3924c332b42a8f9d615542f7bcc5fa902c36e1ff645ece
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Hello AuthentificationController!";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -85,29 +84,28 @@ class __TwigTemplate_60802c7cf628e3924c332b42a8f9d615542f7bcc5fa902c36e1ff645ece
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+        echo "    <h1>";
+        echo twig_escape_filter($this->env, (isset($context["controller_name"]) || array_key_exists("controller_name", $context) ? $context["controller_name"] : (function () { throw new RuntimeError('Variable "controller_name" does not exist.', 6, $this->source); })()), "html", null, true);
+        echo "</h1>
+    <form action=\"/connexion\" method=\"post\">
+        <fieldset>
+            <legend>Merci de vous identifier</legend>
+            <div class=\"form-group row\">
+            <label for=\"login\" class=\"col-sm-2 col-form-label\">Login</label>
+            <div class=\"col-sm-10\">
+                <input type=\"text\" class=\"form-control\" id=\"login\" name=\"login\">
+            </div>
+            </div>
+            <div class=\"form-group row\">
+                <label for=\"password\" class=\"col-sm-2 col-form-label\">Password</label>
+                <div class=\"col-sm-10\">
+                    <input type=\"password\" class=\"form-control\" id=\"password\" name=\"password\">
+                </div>
+            </div>
+        </fieldset>
+        <button type=\"submit\" class=\"btn btn-primary\">Submit</button>
+    </form>
 
-<div class=\"example-wrapper\">
-    <h1>Hello ";
-        // line 12
-        echo twig_escape_filter($this->env, (isset($context["controller_name"]) || array_key_exists("controller_name", $context) ? $context["controller_name"] : (function () { throw new RuntimeError('Variable "controller_name" does not exist.', 12, $this->source); })()), "html", null, true);
-        echo "! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href=\"";
-        // line 16
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\CodeExtension']->getFileLink("C:/Users/rodet/Documents/GitHub/GED-project/src/Controller/AuthentificationController.php", 0), "html", null, true);
-        echo "\">src/Controller/AuthentificationController.php</a></code></li>
-        <li>Your template at <code><a href=\"";
-        // line 17
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\CodeExtension']->getFileLink("C:/Users/rodet/Documents/GitHub/GED-project/templates/authentification/index.html.twig", 0), "html", null, true);
-        echo "\">templates/authentification/index.html.twig</a></code></li>
-    </ul>
-</div>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -129,30 +127,36 @@ class __TwigTemplate_60802c7cf628e3924c332b42a8f9d615542f7bcc5fa902c36e1ff645ece
 
     public function getDebugInfo()
     {
-        return array (  107 => 17,  103 => 16,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  87 => 6,  77 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Hello AuthentificationController!{% endblock %}
+{% block title %}{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    <h1>{{ controller_name }}</h1>
+    <form action=\"/connexion\" method=\"post\">
+        <fieldset>
+            <legend>Merci de vous identifier</legend>
+            <div class=\"form-group row\">
+            <label for=\"login\" class=\"col-sm-2 col-form-label\">Login</label>
+            <div class=\"col-sm-10\">
+                <input type=\"text\" class=\"form-control\" id=\"login\" name=\"login\">
+            </div>
+            </div>
+            <div class=\"form-group row\">
+                <label for=\"password\" class=\"col-sm-2 col-form-label\">Password</label>
+                <div class=\"col-sm-10\">
+                    <input type=\"password\" class=\"form-control\" id=\"password\" name=\"password\">
+                </div>
+            </div>
+        </fieldset>
+        <button type=\"submit\" class=\"btn btn-primary\">Submit</button>
+    </form>
 
-<div class=\"example-wrapper\">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href=\"{{ 'C:/Users/rodet/Documents/GitHub/GED-project/src/Controller/AuthentificationController.php'|file_link(0) }}\">src/Controller/AuthentificationController.php</a></code></li>
-        <li>Your template at <code><a href=\"{{ 'C:/Users/rodet/Documents/GitHub/GED-project/templates/authentification/index.html.twig'|file_link(0) }}\">templates/authentification/index.html.twig</a></code></li>
-    </ul>
-</div>
 {% endblock %}
 ", "authentification/index.html.twig", "C:\\Users\\rodet\\Documents\\GitHub\\GED-project\\templates\\authentification\\index.html.twig");
     }

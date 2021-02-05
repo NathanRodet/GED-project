@@ -47,27 +47,58 @@ class __TwigTemplate_9529eb3052795b4a0e8d7f0d062c303f1771764cff7907286ffd0236a44
         echo "<!DOCTYPE html>
 <html>
     <head>
-        <meta charset=\"UTF-8\">
-        <title>";
+    <meta charset=\"UTF-8\">
+    <title>";
         // line 5
         $this->displayBlock('title', $context, $blocks);
         echo "</title>
-        ";
+    ";
         // line 6
         $this->displayBlock('stylesheets', $context, $blocks);
         // line 9
-        echo "
-        ";
-        // line 10
+        echo "    ";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 11
+        // line 10
         echo "    </head>
+
     <body>
-        <div class=\"container\"> 
-            ";
-        // line 14
+        <div class=\"container\">
+            <nav class=\"navbar navbar-expand-lg navbar-dark bg-primary\">
+            <a class=\"navbar-brand\" href=\"#\">Gestion électronique de documents</a>
+            <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarColor01\" aria-controls=\"navbarColor01\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
+            <span class=\"navbar-toggler-icon\"></span>
+            </button>
+
+                <div class=\"collapse navbar-collapse\" id=\"navbarColor01\">
+                    <ul class=\"navbar-nav mr-auto\">
+                    <li class=\"nav-item active\">
+                    <a class=\"nav-link\" href=\"/dashboard\">Home
+                    <span class=\"sr-only\">(current)</span>
+                    </a>
+                    </li>
+                    <li class=\"nav-item\">
+                    <a class=\"nav-link\" href=\"/insertUser\">Utilisateur</a>
+                    </li>
+                     <li class=\"nav-item\">
+                    <a class=\"nav-link\" href=\"/genre\">Genre</a>
+                    </li>
+                    <li class=\"nav-item dropdown\">
+                    <a class=\"nav-link dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">Dropdown</a>
+                    <div class=\"dropdown-menu\">
+                    <a class=\"dropdown-item\" href=\"#\">Action</a>
+                    <a class=\"dropdown-item\" href=\"#\">Another action</a>
+                    <a class=\"dropdown-item\" href=\"#\">Something else here</a>
+                    <div class=\"dropdown-divider\"></div>
+                    <a class=\"dropdown-item\" href=\"#\">Separated link</a>
+                    </div>
+                    </li>
+                    </ul>
+                </div>
+            </nav>
+        ";
+        // line 46
         $this->displayBlock('body', $context, $blocks);
-        // line 15
+        // line 47
         echo "        </div>
     </body>
 </html>
@@ -90,6 +121,7 @@ class __TwigTemplate_9529eb3052795b4a0e8d7f0d062c303f1771764cff7907286ffd0236a44
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
+        echo "Welcome!";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -109,8 +141,8 @@ class __TwigTemplate_9529eb3052795b4a0e8d7f0d062c303f1771764cff7907286ffd0236a44
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
         // line 7
-        echo "            <link href=\"https://bootswatch.com/4/lux/bootstrap.css\" rel=\"stylesheet\"/>
-        ";
+        echo "    <link href= \"https://bootswatch.com/4/lux/bootstrap.css\" rel=\"stylesheet\">
+    ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -119,7 +151,7 @@ class __TwigTemplate_9529eb3052795b4a0e8d7f0d062c303f1771764cff7907286ffd0236a44
 
     }
 
-    // line 10
+    // line 9
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -137,7 +169,7 @@ class __TwigTemplate_9529eb3052795b4a0e8d7f0d062c303f1771764cff7907286ffd0236a44
 
     }
 
-    // line 14
+    // line 46
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -162,7 +194,7 @@ class __TwigTemplate_9529eb3052795b4a0e8d7f0d062c303f1771764cff7907286ffd0236a44
 
     public function getDebugInfo()
     {
-        return array (  141 => 14,  123 => 10,  112 => 7,  102 => 6,  84 => 5,  71 => 15,  69 => 14,  64 => 11,  62 => 10,  59 => 9,  57 => 6,  53 => 5,  47 => 1,);
+        return array (  173 => 46,  155 => 9,  144 => 7,  134 => 6,  115 => 5,  102 => 47,  100 => 46,  62 => 10,  59 => 9,  57 => 6,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -170,17 +202,49 @@ class __TwigTemplate_9529eb3052795b4a0e8d7f0d062c303f1771764cff7907286ffd0236a44
         return new Source("<!DOCTYPE html>
 <html>
     <head>
-        <meta charset=\"UTF-8\">
-        <title>{% block title %}{% endblock %}</title>
-        {% block stylesheets %}
-            <link href=\"https://bootswatch.com/4/lux/bootstrap.css\" rel=\"stylesheet\"/>
-        {% endblock %}
-
-        {% block javascripts %}{% endblock %}
+    <meta charset=\"UTF-8\">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}
+    <link href= \"https://bootswatch.com/4/lux/bootstrap.css\" rel=\"stylesheet\">
+    {% endblock %}
+    {% block javascripts %}{% endblock %}
     </head>
+
     <body>
-        <div class=\"container\"> 
-            {% block body %}{% endblock %}
+        <div class=\"container\">
+            <nav class=\"navbar navbar-expand-lg navbar-dark bg-primary\">
+            <a class=\"navbar-brand\" href=\"#\">Gestion électronique de documents</a>
+            <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarColor01\" aria-controls=\"navbarColor01\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
+            <span class=\"navbar-toggler-icon\"></span>
+            </button>
+
+                <div class=\"collapse navbar-collapse\" id=\"navbarColor01\">
+                    <ul class=\"navbar-nav mr-auto\">
+                    <li class=\"nav-item active\">
+                    <a class=\"nav-link\" href=\"/dashboard\">Home
+                    <span class=\"sr-only\">(current)</span>
+                    </a>
+                    </li>
+                    <li class=\"nav-item\">
+                    <a class=\"nav-link\" href=\"/insertUser\">Utilisateur</a>
+                    </li>
+                     <li class=\"nav-item\">
+                    <a class=\"nav-link\" href=\"/genre\">Genre</a>
+                    </li>
+                    <li class=\"nav-item dropdown\">
+                    <a class=\"nav-link dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">Dropdown</a>
+                    <div class=\"dropdown-menu\">
+                    <a class=\"dropdown-item\" href=\"#\">Action</a>
+                    <a class=\"dropdown-item\" href=\"#\">Another action</a>
+                    <a class=\"dropdown-item\" href=\"#\">Something else here</a>
+                    <div class=\"dropdown-divider\"></div>
+                    <a class=\"dropdown-item\" href=\"#\">Separated link</a>
+                    </div>
+                    </li>
+                    </ul>
+                </div>
+            </nav>
+        {% block body %}{% endblock %}
         </div>
     </body>
 </html>

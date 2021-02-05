@@ -18,4 +18,7 @@ return [
     'authentification' => [[], ['_controller' => 'App\\Controller\\AuthentificationController::index'], [], [['text', '/authentification']], [], []],
     'insertUser' => [[], ['_controller' => 'App\\Controller\\AuthentificationController::insertUser'], [], [['text', '/insertUser']], [], []],
     'insertUserBdd' => [[], ['_controller' => 'App\\Controller\\AuthentificationController::insertUserBdd'], [], [['text', '/insertUserBdd']], [], []],
+    'connexion' => [[], ['_controller' => 'App\\Controller\\AuthentificationController::connexion'], [], [['text', '/connexion']], [], []],
+    'dashboard' => [[], ['_controller' => 'App\\Controller\\AuthentificationController::dashboard'], [], [['text', '/dashboard']], [], []],
+    'genre' => [[], ['_controller' => 'App\\Controller\\GenreController::index'], [], [['text', '/genre']], [], []],
 ];

@@ -16,6 +16,9 @@ return [
         '/authentification' => [[['_route' => 'authentification', '_controller' => 'App\\Controller\\AuthentificationController::index'], null, null, null, false, false, null]],
         '/insertUser' => [[['_route' => 'insertUser', '_controller' => 'App\\Controller\\AuthentificationController::insertUser'], null, null, null, false, false, null]],
         '/insertUserBdd' => [[['_route' => 'insertUserBdd', '_controller' => 'App\\Controller\\AuthentificationController::insertUserBdd'], null, null, null, false, false, null]],
+        '/connexion' => [[['_route' => 'connexion', '_controller' => 'App\\Controller\\AuthentificationController::connexion'], null, null, null, false, false, null]],
+        '/dashboard' => [[['_route' => 'dashboard', '_controller' => 'App\\Controller\\AuthentificationController::dashboard'], null, null, null, false, false, null]],
+        '/genre' => [[['_route' => 'genre', '_controller' => 'App\\Controller\\GenreController::index'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
