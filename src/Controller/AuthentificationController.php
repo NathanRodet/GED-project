@@ -81,4 +81,16 @@ class AuthentificationController extends AbstractController
     ]);
     }
 
+    #[Route('/listeUser', name: 'listeUser')]
+    public function listeUser(Request $request, EntityManagerInterface $manager): Response
+    {
+        //Requête qui récupère la liste des users
+            $listeUser = $manager->getRepository(Utilisateur::class)->findAll();
+
+        return $this->render('authentification/listeUser.html.twig', [
+    'controller_name' => "Liste des Utilisateurs",
+    'listeUser' => $listeUser,
+        ]);
+    }
+
 }

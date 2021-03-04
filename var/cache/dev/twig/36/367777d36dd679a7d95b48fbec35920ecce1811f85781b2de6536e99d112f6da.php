@@ -59,7 +59,8 @@ class __TwigTemplate_9529eb3052795b4a0e8d7f0d062c303f1771764cff7907286ffd0236a44
         echo "    ";
         $this->displayBlock('javascripts', $context, $blocks);
         // line 10
-        echo "    </head>
+        echo "    <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css\">
+    </head>
 
     <body>
         <div class=\"container\">
@@ -76,8 +77,17 @@ class __TwigTemplate_9529eb3052795b4a0e8d7f0d062c303f1771764cff7907286ffd0236a44
                     <span class=\"sr-only\">(current)</span>
                     </a>
                     </li>
-                    <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"/insertUser\">Utilisateur</a>
+                    <li class=\"nav-item dropdown\">
+                    <a class=\"nav-link dropdown-toggle\" data-toggle=\"dropdown\" href=\"/insertUser\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">Utilisateur</a>
+                    <div class=\"dropdown-menu\">
+                    <a class=\"dropdown-item\" href=\"/listeUser\">Liste</a>
+                    <a class=\"dropdown-item\" href=\"/insertUser\">Créer</a>
+                    </li>
+                    <li class=\"nav-item dropdown\">
+                    <a class=\"nav-link dropdown-toggle\" data-toggle=\"dropdown\" href=\"/insertGenre\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">Genre</a>
+                    <div class=\"dropdown-menu\">
+                    <a class=\"dropdown-item\" href=\"/listeGenre\">Liste</a>
+                    <a class=\"dropdown-item\" href=\"/insertGenre\">Créer</a>
                     </li>
                      <li class=\"nav-item\">
                     <a class=\"nav-link\" href=\"/genre\">Genre</a>
@@ -96,11 +106,14 @@ class __TwigTemplate_9529eb3052795b4a0e8d7f0d062c303f1771764cff7907286ffd0236a44
                 </div>
             </nav>
         ";
-        // line 46
+        // line 56
         $this->displayBlock('body', $context, $blocks);
-        // line 47
+        // line 57
         echo "        </div>
     </body>
+        <script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\" integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\" crossorigin=\"anonymous\"></script>
+        <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js\" integrity=\"sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1\" crossorigin=\"anonymous\"></script>
+        <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\" integrity=\"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM\" crossorigin=\"anonymous\"></script>
 </html>
 ";
         
@@ -169,7 +182,7 @@ class __TwigTemplate_9529eb3052795b4a0e8d7f0d062c303f1771764cff7907286ffd0236a44
 
     }
 
-    // line 46
+    // line 56
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -194,7 +207,7 @@ class __TwigTemplate_9529eb3052795b4a0e8d7f0d062c303f1771764cff7907286ffd0236a44
 
     public function getDebugInfo()
     {
-        return array (  173 => 46,  155 => 9,  144 => 7,  134 => 6,  115 => 5,  102 => 47,  100 => 46,  62 => 10,  59 => 9,  57 => 6,  53 => 5,  47 => 1,);
+        return array (  186 => 56,  168 => 9,  157 => 7,  147 => 6,  128 => 5,  112 => 57,  110 => 56,  62 => 10,  59 => 9,  57 => 6,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -208,6 +221,7 @@ class __TwigTemplate_9529eb3052795b4a0e8d7f0d062c303f1771764cff7907286ffd0236a44
     <link href= \"https://bootswatch.com/4/lux/bootstrap.css\" rel=\"stylesheet\">
     {% endblock %}
     {% block javascripts %}{% endblock %}
+    <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css\">
     </head>
 
     <body>
@@ -225,8 +239,17 @@ class __TwigTemplate_9529eb3052795b4a0e8d7f0d062c303f1771764cff7907286ffd0236a44
                     <span class=\"sr-only\">(current)</span>
                     </a>
                     </li>
-                    <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"/insertUser\">Utilisateur</a>
+                    <li class=\"nav-item dropdown\">
+                    <a class=\"nav-link dropdown-toggle\" data-toggle=\"dropdown\" href=\"/insertUser\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">Utilisateur</a>
+                    <div class=\"dropdown-menu\">
+                    <a class=\"dropdown-item\" href=\"/listeUser\">Liste</a>
+                    <a class=\"dropdown-item\" href=\"/insertUser\">Créer</a>
+                    </li>
+                    <li class=\"nav-item dropdown\">
+                    <a class=\"nav-link dropdown-toggle\" data-toggle=\"dropdown\" href=\"/insertGenre\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">Genre</a>
+                    <div class=\"dropdown-menu\">
+                    <a class=\"dropdown-item\" href=\"/listeGenre\">Liste</a>
+                    <a class=\"dropdown-item\" href=\"/insertGenre\">Créer</a>
                     </li>
                      <li class=\"nav-item\">
                     <a class=\"nav-link\" href=\"/genre\">Genre</a>
@@ -247,6 +270,9 @@ class __TwigTemplate_9529eb3052795b4a0e8d7f0d062c303f1771764cff7907286ffd0236a44
         {% block body %}{% endblock %}
         </div>
     </body>
+        <script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\" integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\" crossorigin=\"anonymous\"></script>
+        <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js\" integrity=\"sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1\" crossorigin=\"anonymous\"></script>
+        <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\" integrity=\"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM\" crossorigin=\"anonymous\"></script>
 </html>
 ", "base.html.twig", "C:\\Users\\rodet\\Documents\\GitHub\\GED-project\\templates\\base.html.twig");
     }

@@ -20,5 +20,10 @@ return [
     'insertUserBdd' => [[], ['_controller' => 'App\\Controller\\AuthentificationController::insertUserBdd'], [], [['text', '/insertUserBdd']], [], []],
     'connexion' => [[], ['_controller' => 'App\\Controller\\AuthentificationController::connexion'], [], [['text', '/connexion']], [], []],
     'dashboard' => [[], ['_controller' => 'App\\Controller\\AuthentificationController::dashboard'], [], [['text', '/dashboard']], [], []],
+    'listeUser' => [[], ['_controller' => 'App\\Controller\\AuthentificationController::listeUser'], [], [['text', '/listeUser']], [], []],
     'genre' => [[], ['_controller' => 'App\\Controller\\GenreController::index'], [], [['text', '/genre']], [], []],
+    'insertGenre' => [[], ['_controller' => 'App\\Controller\\GenreController::insertGenre'], [], [['text', '/insertGenre']], [], []],
+    'insertGenreBdd' => [[], ['_controller' => 'App\\Controller\\GenreController::insertGenreBdd'], [], [['text', '/insertGenreBdd']], [], []],
+    'listeGenre' => [[], ['_controller' => 'App\\Controller\\GenreController::listeGenre'], [], [['text', '/listeGenre']], [], []],
+    'deleteGenre' => [['id'], ['_controller' => 'App\\Controller\\GenreController::deleteGenre'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/deleteGenre']], [], []],
 ];
