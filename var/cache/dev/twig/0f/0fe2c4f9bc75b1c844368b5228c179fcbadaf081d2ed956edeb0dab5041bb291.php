@@ -125,6 +125,6 @@ class __TwigTemplate_54ed53640f3123904a1346a3ed540b13b2b051142b602238b0e2c1e9aef
 .exception-message-wrapper .container {
     min-height: auto;
 }
-", "@WebProfiler/Collector/exception.css.twig", "C:\\Users\\rodet\\Desktop\\GED-project\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\exception.css.twig");
+", "@WebProfiler/Collector/exception.css.twig", "C:\\Users\\rodet\\Documents\\GitHub\\GED-project\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\exception.css.twig");
     }
 }

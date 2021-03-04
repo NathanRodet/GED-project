@@ -65,7 +65,7 @@ class __TwigTemplate_3554687d65f3ceed371bf766e3da46704295c1dd139265b578b62c0854e
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Liste des genres";
+        echo "Liste des Genre";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -91,8 +91,8 @@ class __TwigTemplate_3554687d65f3ceed371bf766e3da46704295c1dd139265b578b62c0854e
 <table class=\"table table-hover\">
 <thead>
 <tr>
-<th scope=\"col\">Type</th>
-<th scope=\"col\">ID</th>
+<th scope=\"col\">Nom</th>
+<th scope=\"col\">Actions</th>
 </tr>
 </thead>
 <tbody>
@@ -107,25 +107,20 @@ class __TwigTemplate_3554687d65f3ceed371bf766e3da46704295c1dd139265b578b62c0854e
             // line 17
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "type", [], "any", false, false, false, 17), "html", null, true);
             echo "</th>
-<th scope=\"row\">";
-            // line 18
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "id", [], "any", false, false, false, 18), "html", null, true);
-            echo "</th>
 <td>
 <a href=\"/deleteGenre/";
-            // line 20
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "id", [], "any", false, false, false, 20), "html", null, true);
+            // line 19
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "id", [], "any", false, false, false, 19), "html", null, true);
             echo "\">
 <i class=\"bi bi-trash\"></i></a>
 </td>
-</tr>
 </tr>
 ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 26
+        // line 24
         echo "</tbody>
 </table>
 
@@ -150,34 +145,32 @@ class __TwigTemplate_3554687d65f3ceed371bf766e3da46704295c1dd139265b578b62c0854e
 
     public function getDebugInfo()
     {
-        return array (  129 => 26,  117 => 20,  112 => 18,  108 => 17,  105 => 16,  101 => 15,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  124 => 24,  113 => 19,  108 => 17,  105 => 16,  101 => 15,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Liste des genres{% endblock %}
+{% block title %}Liste des Genre{% endblock %}
 
 {% block body %}
 <h1>{{ controller_name }}</h1>
 <table class=\"table table-hover\">
 <thead>
 <tr>
-<th scope=\"col\">Type</th>
-<th scope=\"col\">ID</th>
+<th scope=\"col\">Nom</th>
+<th scope=\"col\">Actions</th>
 </tr>
 </thead>
 <tbody>
 {% for item in listeGenre %}
 <tr class=\"table\">
 <th scope=\"row\">{{ item.type }}</th>
-<th scope=\"row\">{{ item.id }}</th>
 <td>
 <a href=\"/deleteGenre/{{ item.id }}\">
 <i class=\"bi bi-trash\"></i></a>
 </td>
-</tr>
 </tr>
 {% endfor %}
 </tbody>

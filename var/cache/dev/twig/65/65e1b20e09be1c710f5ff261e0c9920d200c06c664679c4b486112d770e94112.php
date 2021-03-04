@@ -710,6 +710,6 @@ class __TwigTemplate_66be4235382e02d93f7331766728e5c3efba9b31f82e3016b349ccaffbc
         </div>
     {% endfor %}
 {% endblock %}
-", "@WebProfiler/Collector/mailer.html.twig", "C:\\Users\\rodet\\Desktop\\GED-project\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\mailer.html.twig");
+", "@WebProfiler/Collector/mailer.html.twig", "C:\\Users\\rodet\\Documents\\GitHub\\GED-project\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\mailer.html.twig");
     }
 }

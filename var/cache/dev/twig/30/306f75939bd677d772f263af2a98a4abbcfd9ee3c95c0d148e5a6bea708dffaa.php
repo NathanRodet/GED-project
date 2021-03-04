@@ -482,6 +482,6 @@ class __TwigTemplate_07d864b46d5d91df9e8f8091045a80a5f6d8114570d7b91f1896788931d
         {% endfor %}
     </table>
 {% endmacro %}
-", "@WebProfiler/Collector/events.html.twig", "C:\\Users\\rodet\\Desktop\\GED-project\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\events.html.twig");
+", "@WebProfiler/Collector/events.html.twig", "C:\\Users\\rodet\\Documents\\GitHub\\GED-project\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\events.html.twig");
     }
 }

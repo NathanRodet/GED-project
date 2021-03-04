@@ -69,6 +69,7 @@
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
     <parameter key="kernel.container_class">App_KernelDevDebugContainer</parameter>
+    <parameter key="upload">C:\Users\rodet\Documents\GitHub\GED-project/public/upload/</parameter>
     <parameter key="event_dispatcher.event_aliases" type="collection">
       <parameter key="Symfony\Component\Console\Event\ConsoleCommandEvent">console.command</parameter>
       <parameter key="Symfony\Component\Console\Event\ConsoleErrorEvent">console.error</parameter>
@@ -331,6 +332,13 @@
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.5nX7ca3.App\Controller\AuthentificationController"/>
+      </call>
+    </service>
+    <service id="App\Controller\GedController" class="App\Controller\GedController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.5nX7ca3.App\Controller\GedController"/>
       </call>
     </service>
     <service id="App\Controller\GenreController" class="App\Controller\GenreController" public="true" autowire="true" autoconfigure="true">
@@ -5057,6 +5065,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\AuthentificationController" class="App\Controller\AuthentificationController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\AuthentificationController" class="App\Controller\AuthentificationController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\AuthentificationController" class="App\Controller\AuthentificationController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\GedController" class="App\Controller\GedController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\GedController" class="App\Controller\GedController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\GedController" class="App\Controller\GedController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\GenreController" class="App\Controller\GenreController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\GenreController" class="App\Controller\GenreController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\GenreController" class="App\Controller\GenreController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -5329,6 +5340,13 @@
         <argument key="manager" type="service" id="doctrine.orm.default_entity_manager"/>
       </argument>
     </service>
+    <service id=".service_locator.hVtPB4z" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="id" type="service" id=".errored..service_locator.hVtPB4z.App\Entity\Utilisateur"/>
+        <argument key="manager" type="service" id="doctrine.orm.default_entity_manager"/>
+      </argument>
+    </service>
     <service id=".service_locator.2asLwmG" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -5336,13 +5354,17 @@
         <argument key="manager" type="service" id="doctrine.orm.default_entity_manager"/>
       </argument>
     </service>
-    <service id=".service_locator.nOTiASx" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.hNai3Sb" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AuthentificationController::connexion" type="service" id=".service_locator.oiABibH"/>
         <argument key="App\Controller\AuthentificationController::dashboard" type="service" id=".service_locator.oiABibH"/>
+        <argument key="App\Controller\AuthentificationController::deleteUser" type="service" id=".service_locator.hVtPB4z"/>
         <argument key="App\Controller\AuthentificationController::insertUserBdd" type="service" id=".service_locator.oiABibH"/>
         <argument key="App\Controller\AuthentificationController::listeUser" type="service" id=".service_locator.oiABibH"/>
+        <argument key="App\Controller\GedController::insertGed" type="service" id=".service_locator.oiABibH"/>
+        <argument key="App\Controller\GedController::listeGed" type="service" id=".service_locator.oiABibH"/>
+        <argument key="App\Controller\GedController::uploadGed" type="service" id=".service_locator.oiABibH"/>
         <argument key="App\Controller\GenreController::deleteGenre" type="service" id=".service_locator.2asLwmG"/>
         <argument key="App\Controller\GenreController::insertGenreBdd" type="service" id=".service_locator.oiABibH"/>
         <argument key="App\Controller\GenreController::listeGenre" type="service" id=".service_locator.oiABibH"/>
@@ -5354,8 +5376,12 @@
         <argument key="kernel::terminate" type="service" id=".service_locator.KfwZsne"/>
         <argument key="App\Controller\AuthentificationController:connexion" type="service" id=".service_locator.oiABibH"/>
         <argument key="App\Controller\AuthentificationController:dashboard" type="service" id=".service_locator.oiABibH"/>
+        <argument key="App\Controller\AuthentificationController:deleteUser" type="service" id=".service_locator.hVtPB4z"/>
         <argument key="App\Controller\AuthentificationController:insertUserBdd" type="service" id=".service_locator.oiABibH"/>
         <argument key="App\Controller\AuthentificationController:listeUser" type="service" id=".service_locator.oiABibH"/>
+        <argument key="App\Controller\GedController:insertGed" type="service" id=".service_locator.oiABibH"/>
+        <argument key="App\Controller\GedController:listeGed" type="service" id=".service_locator.oiABibH"/>
+        <argument key="App\Controller\GedController:uploadGed" type="service" id=".service_locator.oiABibH"/>
         <argument key="App\Controller\GenreController:deleteGenre" type="service" id=".service_locator.2asLwmG"/>
         <argument key="App\Controller\GenreController:insertGenreBdd" type="service" id=".service_locator.oiABibH"/>
         <argument key="App\Controller\GenreController:listeGenre" type="service" id=".service_locator.oiABibH"/>
@@ -5661,6 +5687,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.5nX7ca3" method="withContext"/>
     </service>
+    <service id=".service_locator.5nX7ca3.App\Controller\GedController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\GedController"/>
+      <argument>App\Controller\GedController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.5nX7ca3" method="withContext"/>
+    </service>
     <service id=".service_locator.5nX7ca3.App\Controller\GenreController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\GenreController"/>
       <argument>App\Controller\GenreController</argument>
@@ -5829,12 +5861,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.nOTiASx"/>
+      <argument type="service" id=".service_locator.hNai3Sb"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.nOTiASx"/>
+      <argument type="service" id=".service_locator.hNai3Sb"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface">
       <argument type="collection"/>
@@ -5846,6 +5878,7 @@
     </service>
     <service id=".errored..service_locator.KfwZsne.Symfony\Component\HttpFoundation\Response" class="Symfony\Component\HttpFoundation\Response"/>
     <service id=".errored..service_locator.KfbR3DY.Symfony\Component\Config\Loader\LoaderInterface" class="Symfony\Component\Config\Loader\LoaderInterface"/>
+    <service id=".errored..service_locator.hVtPB4z.App\Entity\Utilisateur" class="App\Entity\Utilisateur"/>
     <service id=".errored..service_locator.2asLwmG.App\Entity\Genre" class="App\Entity\Genre"/>
     <service id="console.command_loader" class="Symfony\Component\Console\CommandLoader\ContainerCommandLoader" public="true">
       <tag name="container.no_preload"/>
@@ -6243,7 +6276,7 @@
     <service id="Symfony\Component\Security\Core\User\UserCheckerInterface" alias="security.user_checker"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.Kbr2i2X" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.nOTiASx"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.hNai3Sb"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>

@@ -117,14 +117,20 @@ class __TwigTemplate_d7c1933aee56c072a81df30e05178ac86dd0076a1cfb4a9f99dfc20a2fc
             // line 21
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "id", [], "any", false, false, false, 21), "html", null, true);
             echo "</td>
-<td>RAS</td>
+<td>
+<a href=\"/deleteUser/";
+            // line 23
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "id", [], "any", false, false, false, 23), "html", null, true);
+            echo "\">
+<i class=\"bi bi-trash\"></i></a>
+</td>
 </tr>
 ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 25
+        // line 28
         echo "</tbody>
 </table>
 
@@ -149,7 +155,7 @@ class __TwigTemplate_d7c1933aee56c072a81df30e05178ac86dd0076a1cfb4a9f99dfc20a2fc
 
     public function getDebugInfo()
     {
-        return array (  128 => 25,  118 => 21,  114 => 20,  110 => 19,  107 => 18,  103 => 17,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  134 => 28,  123 => 23,  118 => 21,  114 => 20,  110 => 19,  107 => 18,  103 => 17,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -175,7 +181,10 @@ class __TwigTemplate_d7c1933aee56c072a81df30e05178ac86dd0076a1cfb4a9f99dfc20a2fc
 <th scope=\"row\">{{ item.nom }}</th>
 <td>{{ item.prenom }}</td>
 <td>{{ item.id }}</td>
-<td>RAS</td>
+<td>
+<a href=\"/deleteUser/{{ item.id }}\">
+<i class=\"bi bi-trash\"></i></a>
+</td>
 </tr>
 {% endfor %}
 </tbody>

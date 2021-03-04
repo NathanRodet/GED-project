@@ -55,7 +55,7 @@ class __TwigTemplate_256299aeea53a7f41ddc93852efec77aa280e14a81f71be2602048493d1
 
     }
 
-    // line 2
+    // line 3
     public function block_title($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -65,6 +65,7 @@ class __TwigTemplate_256299aeea53a7f41ddc93852efec77aa280e14a81f71be2602048493d1
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
+        echo "index html genre";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -73,7 +74,7 @@ class __TwigTemplate_256299aeea53a7f41ddc93852efec77aa280e14a81f71be2602048493d1
 
     }
 
-    // line 4
+    // line 5
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -83,9 +84,9 @@ class __TwigTemplate_256299aeea53a7f41ddc93852efec77aa280e14a81f71be2602048493d1
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 5
+        // line 6
         echo "    <h1>";
-        echo twig_escape_filter($this->env, (isset($context["controller_name"]) || array_key_exists("controller_name", $context) ? $context["controller_name"] : (function () { throw new RuntimeError('Variable "controller_name" does not exist.', 5, $this->source); })()), "html", null, true);
+        echo twig_escape_filter($this->env, (isset($context["controller_name"]) || array_key_exists("controller_name", $context) ? $context["controller_name"] : (function () { throw new RuntimeError('Variable "controller_name" does not exist.', 6, $this->source); })()), "html", null, true);
         echo "</h1>
     <form action=\"/connexion\" method=\"post\">
         <fieldset>
@@ -127,13 +128,14 @@ class __TwigTemplate_256299aeea53a7f41ddc93852efec77aa280e14a81f71be2602048493d1
 
     public function getDebugInfo()
     {
-        return array (  87 => 5,  77 => 4,  59 => 2,  36 => 1,);
+        return array (  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
-{% block title %}{% endblock %}
+
+{% block title %}index html genre{% endblock %}
 
 {% block body %}
     <h1>{{ controller_name }}</h1>

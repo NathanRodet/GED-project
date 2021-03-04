@@ -100,6 +100,7 @@ class __TwigTemplate_0758822df991dd1ba271aea7343e531cad440195ea6861eec5b42d218d8
 <button type=\"submit\" class=\"btn btn-primary\">Ajouter</button>
 </form>
 
+
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -143,6 +144,7 @@ class __TwigTemplate_0758822df991dd1ba271aea7343e531cad440195ea6861eec5b42d218d8
 </fieldset>
 <button type=\"submit\" class=\"btn btn-primary\">Ajouter</button>
 </form>
+
 
 {% endblock %}", "genre/insertGenre.html.twig", "C:\\Users\\rodet\\Documents\\GitHub\\GED-project\\templates\\genre\\insertGenre.html.twig");
     }

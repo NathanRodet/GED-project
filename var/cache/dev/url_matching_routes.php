@@ -15,10 +15,13 @@ return [
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
         '/authentification' => [[['_route' => 'authentification', '_controller' => 'App\\Controller\\AuthentificationController::index'], null, null, null, false, false, null]],
         '/insertUser' => [[['_route' => 'insertUser', '_controller' => 'App\\Controller\\AuthentificationController::insertUser'], null, null, null, false, false, null]],
-        '/insertUserBdd' => [[['_route' => 'insertUserBdd', '_controller' => 'App\\Controller\\AuthentificationController::insertUserBdd'], null, null, null, false, false, null]],
+        '/insertUserBdd' => [[['_route' => 'insertUserBDD', '_controller' => 'App\\Controller\\AuthentificationController::insertUserBdd'], null, null, null, false, false, null]],
+        '/listeUser' => [[['_route' => 'listeUser', '_controller' => 'App\\Controller\\AuthentificationController::listeUser'], null, null, null, false, false, null]],
         '/connexion' => [[['_route' => 'connexion', '_controller' => 'App\\Controller\\AuthentificationController::connexion'], null, null, null, false, false, null]],
         '/dashboard' => [[['_route' => 'dashboard', '_controller' => 'App\\Controller\\AuthentificationController::dashboard'], null, null, null, false, false, null]],
-        '/listeUser' => [[['_route' => 'listeUser', '_controller' => 'App\\Controller\\AuthentificationController::listeUser'], null, null, null, false, false, null]],
+        '/uploadGed' => [[['_route' => 'uploadGed', '_controller' => 'App\\Controller\\GedController::uploadGed'], null, null, null, false, false, null]],
+        '/insertGed' => [[['_route' => 'insertGed', '_controller' => 'App\\Controller\\GedController::insertGed'], null, null, null, false, false, null]],
+        '/listeGed' => [[['_route' => 'listeGed', '_controller' => 'App\\Controller\\GedController::listeGed'], null, null, null, false, false, null]],
         '/genre' => [[['_route' => 'genre', '_controller' => 'App\\Controller\\GenreController::index'], null, null, null, false, false, null]],
         '/insertGenre' => [[['_route' => 'insertGenre', '_controller' => 'App\\Controller\\GenreController::insertGenre'], null, null, null, false, false, null]],
         '/insertGenreBdd' => [[['_route' => 'insertGenreBdd', '_controller' => 'App\\Controller\\GenreController::insertGenreBdd'], null, null, null, false, false, null]],
@@ -41,7 +44,10 @@ return [
                         .'|(*:159)'
                     .')'
                 .')'
-                .'|/deleteGenre/([^/]++)(*:190)'
+                .'|/delete(?'
+                    .'|User/([^/]++)(*:192)'
+                    .'|Genre/([^/]++)(*:214)'
+                .')'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -52,7 +58,8 @@ return [
         136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
         149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
         159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-        190 => [
+        192 => [[['_route' => 'deleteUser', '_controller' => 'App\\Controller\\AuthentificationController::deleteUser'], ['id'], null, null, false, true, null]],
+        214 => [
             [['_route' => 'deleteGenre', '_controller' => 'App\\Controller\\GenreController::deleteGenre'], ['id'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

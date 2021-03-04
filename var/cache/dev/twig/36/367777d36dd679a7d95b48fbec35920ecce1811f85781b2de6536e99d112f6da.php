@@ -89,26 +89,19 @@ class __TwigTemplate_9529eb3052795b4a0e8d7f0d062c303f1771764cff7907286ffd0236a44
                     <a class=\"dropdown-item\" href=\"/listeGenre\">Liste</a>
                     <a class=\"dropdown-item\" href=\"/insertGenre\">Créer</a>
                     </li>
-                     <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"/genre\">Genre</a>
-                    </li>
                     <li class=\"nav-item dropdown\">
-                    <a class=\"nav-link dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">Dropdown</a>
+                    <a class=\"nav-link dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">Document</a>
                     <div class=\"dropdown-menu\">
-                    <a class=\"dropdown-item\" href=\"#\">Action</a>
-                    <a class=\"dropdown-item\" href=\"#\">Another action</a>
-                    <a class=\"dropdown-item\" href=\"#\">Something else here</a>
-                    <div class=\"dropdown-divider\"></div>
-                    <a class=\"dropdown-item\" href=\"#\">Separated link</a>
-                    </div>
+                    <a class=\"dropdown-item\" href=\"/listeGed\">Liste</a>
+                    <a class=\"dropdown-item\" href=\"/uploadGed\">Upload</a>
                     </li>
                     </ul>
                 </div>
             </nav>
         ";
-        // line 56
+        // line 49
         $this->displayBlock('body', $context, $blocks);
-        // line 57
+        // line 50
         echo "        </div>
     </body>
         <script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\" integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\" crossorigin=\"anonymous\"></script>
@@ -182,7 +175,7 @@ class __TwigTemplate_9529eb3052795b4a0e8d7f0d062c303f1771764cff7907286ffd0236a44
 
     }
 
-    // line 56
+    // line 49
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -207,7 +200,7 @@ class __TwigTemplate_9529eb3052795b4a0e8d7f0d062c303f1771764cff7907286ffd0236a44
 
     public function getDebugInfo()
     {
-        return array (  186 => 56,  168 => 9,  157 => 7,  147 => 6,  128 => 5,  112 => 57,  110 => 56,  62 => 10,  59 => 9,  57 => 6,  53 => 5,  47 => 1,);
+        return array (  179 => 49,  161 => 9,  150 => 7,  140 => 6,  121 => 5,  105 => 50,  103 => 49,  62 => 10,  59 => 9,  57 => 6,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -251,18 +244,11 @@ class __TwigTemplate_9529eb3052795b4a0e8d7f0d062c303f1771764cff7907286ffd0236a44
                     <a class=\"dropdown-item\" href=\"/listeGenre\">Liste</a>
                     <a class=\"dropdown-item\" href=\"/insertGenre\">Créer</a>
                     </li>
-                     <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"/genre\">Genre</a>
-                    </li>
                     <li class=\"nav-item dropdown\">
-                    <a class=\"nav-link dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">Dropdown</a>
+                    <a class=\"nav-link dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">Document</a>
                     <div class=\"dropdown-menu\">
-                    <a class=\"dropdown-item\" href=\"#\">Action</a>
-                    <a class=\"dropdown-item\" href=\"#\">Another action</a>
-                    <a class=\"dropdown-item\" href=\"#\">Something else here</a>
-                    <div class=\"dropdown-divider\"></div>
-                    <a class=\"dropdown-item\" href=\"#\">Separated link</a>
-                    </div>
+                    <a class=\"dropdown-item\" href=\"/listeGed\">Liste</a>
+                    <a class=\"dropdown-item\" href=\"/uploadGed\">Upload</a>
                     </li>
                     </ul>
                 </div>
