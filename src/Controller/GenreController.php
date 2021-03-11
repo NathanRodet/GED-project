@@ -8,6 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use App\Entity\Genre;
+use App\Entity\Document;
 
 class GenreController extends AbstractController
 {
@@ -55,12 +56,20 @@ class GenreController extends AbstractController
 
     #[Route('/deleteGenre/{id}', name: 'deleteGenre')]
     public function deleteGenre(Request $request, EntityManagerInterface $manager, Genre $id): Response
-     {
-
-     $manager->remove($id);
-     $manager->flush();
-
-     return $this->redirectToRoute('listeGenre');
-     }
+    {
+    //Vérifier que le genre n'est pas utilisé.
+    $testGenre = $manager->getRepository(Document::class)->findByTypeId($id->getId());
+    if($testGenre){
+    $this->addFlash(
+    'notice',
+    'Ce genre ne peut pas être supprimé car il est utilisé pour définir le genre d\'un fichier existant'
+    );
+    }else{
+    $manager->remove($id);
+    $manager->flush();
+    }
+    
+    return $this->redirectToRoute('listeGenre');
+    }
 }
 

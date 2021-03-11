@@ -88,7 +88,25 @@ class __TwigTemplate_3554687d65f3ceed371bf766e3da46704295c1dd139265b578b62c0854e
         echo "<h1>";
         echo twig_escape_filter($this->env, (isset($context["controller_name"]) || array_key_exists("controller_name", $context) ? $context["controller_name"] : (function () { throw new RuntimeError('Variable "controller_name" does not exist.', 6, $this->source); })()), "html", null, true);
         echo "</h1>
-<table class=\"table table-hover\">
+";
+        // line 7
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 7, $this->source); })()), "flashes", [0 => "notice"], "method", false, false, false, 7));
+        foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
+            // line 8
+            echo "<div class=\"flash-notice alert alert-dismissible alert-danger\">
+";
+            // line 9
+            echo twig_escape_filter($this->env, $context["message"], "html", null, true);
+            echo "
+</div>
+";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 12
+        echo "<table class=\"table table-hover\">
 <thead>
 <tr>
 <th scope=\"col\">Nom</th>
@@ -97,30 +115,27 @@ class __TwigTemplate_3554687d65f3ceed371bf766e3da46704295c1dd139265b578b62c0854e
 </thead>
 <tbody>
 ";
-        // line 15
+        // line 20
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["listeGenre"]) || array_key_exists("listeGenre", $context) ? $context["listeGenre"] : (function () { throw new RuntimeError('Variable "listeGenre" does not exist.', 15, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["listeGenre"]) || array_key_exists("listeGenre", $context) ? $context["listeGenre"] : (function () { throw new RuntimeError('Variable "listeGenre" does not exist.', 20, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-            // line 16
+            // line 21
             echo "<tr class=\"table\">
 <th scope=\"row\">";
-            // line 17
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "type", [], "any", false, false, false, 17), "html", null, true);
+            // line 22
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "type", [], "any", false, false, false, 22), "html", null, true);
             echo "</th>
-<td>
-<a href=\"/deleteGenre/";
-            // line 19
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "id", [], "any", false, false, false, 19), "html", null, true);
-            echo "\">
-<i class=\"bi bi-trash\"></i></a>
-</td>
+<td><a href=\"/deleteGenre/";
+            // line 23
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "id", [], "any", false, false, false, 23), "html", null, true);
+            echo "\"><i class=\"bi bi-trash\"></i></a></td>
 </tr>
 ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 24
+        // line 26
         echo "</tbody>
 </table>
 
@@ -145,7 +160,7 @@ class __TwigTemplate_3554687d65f3ceed371bf766e3da46704295c1dd139265b578b62c0854e
 
     public function getDebugInfo()
     {
-        return array (  124 => 24,  113 => 19,  108 => 17,  105 => 16,  101 => 15,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  139 => 26,  130 => 23,  126 => 22,  123 => 21,  119 => 20,  109 => 12,  100 => 9,  97 => 8,  93 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -156,6 +171,11 @@ class __TwigTemplate_3554687d65f3ceed371bf766e3da46704295c1dd139265b578b62c0854e
 
 {% block body %}
 <h1>{{ controller_name }}</h1>
+{% for message in app.flashes('notice') %}
+<div class=\"flash-notice alert alert-dismissible alert-danger\">
+{{ message }}
+</div>
+{% endfor %}
 <table class=\"table table-hover\">
 <thead>
 <tr>
@@ -167,10 +187,7 @@ class __TwigTemplate_3554687d65f3ceed371bf766e3da46704295c1dd139265b578b62c0854e
 {% for item in listeGenre %}
 <tr class=\"table\">
 <th scope=\"row\">{{ item.type }}</th>
-<td>
-<a href=\"/deleteGenre/{{ item.id }}\">
-<i class=\"bi bi-trash\"></i></a>
-</td>
+<td><a href=\"/deleteGenre/{{ item.id }}\"><i class=\"bi bi-trash\"></i></a></td>
 </tr>
 {% endfor %}
 </tbody>

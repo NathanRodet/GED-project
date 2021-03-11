@@ -19,7 +19,6 @@ class AuthentificationController extends AbstractController
         ]);
     }
 
-
     #[Route('/insertUser', name: 'insertUser')]
     public function insertUser(): Response
     {

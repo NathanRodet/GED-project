@@ -16,6 +16,6 @@ if (!\class_exists(App_KernelDevDebugContainer::class, false)) {
 
 return new \ContainerWsIcsly\App_KernelDevDebugContainer([
     'container.build_hash' => 'WsIcsly',
-    'container.build_id' => 'd59179b6',
-    'container.build_time' => 1614855712,
+    'container.build_id' => 'd7c40d16',
+    'container.build_time' => 1615450074,
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerWsIcsly');
