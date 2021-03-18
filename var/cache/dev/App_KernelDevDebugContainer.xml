@@ -5347,6 +5347,13 @@
         <argument key="manager" type="service" id="doctrine.orm.default_entity_manager"/>
       </argument>
     </service>
+    <service id=".service_locator.V61_Obo" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="id" type="service" id=".errored..service_locator.V61_Obo.App\Entity\Document"/>
+        <argument key="manager" type="service" id="doctrine.orm.default_entity_manager"/>
+      </argument>
+    </service>
     <service id=".service_locator.2asLwmG" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -5354,7 +5361,7 @@
         <argument key="manager" type="service" id="doctrine.orm.default_entity_manager"/>
       </argument>
     </service>
-    <service id=".service_locator.hNai3Sb" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.YLbNcx1" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AuthentificationController::connexion" type="service" id=".service_locator.oiABibH"/>
@@ -5362,6 +5369,8 @@
         <argument key="App\Controller\AuthentificationController::deleteUser" type="service" id=".service_locator.hVtPB4z"/>
         <argument key="App\Controller\AuthentificationController::insertUserBdd" type="service" id=".service_locator.oiABibH"/>
         <argument key="App\Controller\AuthentificationController::listeUser" type="service" id=".service_locator.oiABibH"/>
+        <argument key="App\Controller\AuthentificationController::logout" type="service" id=".service_locator.oiABibH"/>
+        <argument key="App\Controller\GedController::deleteGed" type="service" id=".service_locator.V61_Obo"/>
         <argument key="App\Controller\GedController::insertGed" type="service" id=".service_locator.oiABibH"/>
         <argument key="App\Controller\GedController::listeGed" type="service" id=".service_locator.oiABibH"/>
         <argument key="App\Controller\GedController::uploadGed" type="service" id=".service_locator.oiABibH"/>
@@ -5379,6 +5388,8 @@
         <argument key="App\Controller\AuthentificationController:deleteUser" type="service" id=".service_locator.hVtPB4z"/>
         <argument key="App\Controller\AuthentificationController:insertUserBdd" type="service" id=".service_locator.oiABibH"/>
         <argument key="App\Controller\AuthentificationController:listeUser" type="service" id=".service_locator.oiABibH"/>
+        <argument key="App\Controller\AuthentificationController:logout" type="service" id=".service_locator.oiABibH"/>
+        <argument key="App\Controller\GedController:deleteGed" type="service" id=".service_locator.V61_Obo"/>
         <argument key="App\Controller\GedController:insertGed" type="service" id=".service_locator.oiABibH"/>
         <argument key="App\Controller\GedController:listeGed" type="service" id=".service_locator.oiABibH"/>
         <argument key="App\Controller\GedController:uploadGed" type="service" id=".service_locator.oiABibH"/>
@@ -5861,12 +5872,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.hNai3Sb"/>
+      <argument type="service" id=".service_locator.YLbNcx1"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.hNai3Sb"/>
+      <argument type="service" id=".service_locator.YLbNcx1"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface">
       <argument type="collection"/>
@@ -5879,6 +5890,7 @@
     <service id=".errored..service_locator.KfwZsne.Symfony\Component\HttpFoundation\Response" class="Symfony\Component\HttpFoundation\Response"/>
     <service id=".errored..service_locator.KfbR3DY.Symfony\Component\Config\Loader\LoaderInterface" class="Symfony\Component\Config\Loader\LoaderInterface"/>
     <service id=".errored..service_locator.hVtPB4z.App\Entity\Utilisateur" class="App\Entity\Utilisateur"/>
+    <service id=".errored..service_locator.V61_Obo.App\Entity\Document" class="App\Entity\Document"/>
     <service id=".errored..service_locator.2asLwmG.App\Entity\Genre" class="App\Entity\Genre"/>
     <service id="console.command_loader" class="Symfony\Component\Console\CommandLoader\ContainerCommandLoader" public="true">
       <tag name="container.no_preload"/>
@@ -6276,7 +6288,7 @@
     <service id="Symfony\Component\Security\Core\User\UserCheckerInterface" alias="security.user_checker"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.Kbr2i2X" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.hNai3Sb"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.YLbNcx1"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>

@@ -121,7 +121,7 @@ class __TwigTemplate_6a37b9ae39e500069d6b975dedbdc8a7d02919aefd0315ac4ad1efc3494
 <div class=\"form-group row\">
 <label for=\"staticPrenom\" class=\"col-sm-2 col-form-label\">Nom</label>
 <div class=\"col-sm-10\">
-<input type=\"text\" class=\"form-group\" id=\"nom\"required name=\"nom\">
+<input type=\"text\" class=\"form-group\" id=\"nom\" required name=\"nom\">
 </div>
 </div>
 <div class=\"form-group row\">
@@ -137,6 +137,77 @@ class __TwigTemplate_6a37b9ae39e500069d6b975dedbdc8a7d02919aefd0315ac4ad1efc3494
 <input type=\"checkbox\" class=\"custom-control-input\" id=\"customSwitch1\" checked=\"\" name=\"choix\">
 <label class=\"custom-control-label\" for=\"customSwitch1\">Actif / Inactif</label>
 </div>
+</div>
+</div>
+<div class=\"form-group row\">
+<label for=\"staticNom\" class=\"col-sm-2 col-form-label\">Autorisation</label>
+<div class=\"col-sm-10\">
+<select class=\"form-group\" name=\"autorisation\">
+";
+        // line 47
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["listeAutorisation"]) || array_key_exists("listeAutorisation", $context) ? $context["listeAutorisation"] : (function () { throw new RuntimeError('Variable "listeAutorisation" does not exist.', 47, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
+            // line 48
+            echo "<option class=\"form-group\" value= ";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "id", [], "any", false, false, false, 48), "html", null, true);
+            echo ">
+";
+            // line 49
+            if ((twig_get_attribute($this->env, $this->source, $context["item"], "ecriture", [], "any", false, false, false, 49) == 1)) {
+                // line 50
+                echo "Ecriture
+";
+            }
+            // line 52
+            if ((twig_get_attribute($this->env, $this->source, $context["item"], "lecture", [], "any", false, false, false, 52) == 1)) {
+                // line 53
+                echo "Lecture
+";
+            } else {
+                // line 55
+                echo "Fichier protégé
+";
+            }
+            // line 57
+            echo "</option>
+";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 59
+        echo "</select>
+</div>
+</div>
+<div class=\"form-group row\">
+<label for=\"staticNom\" class=\"col-sm-2 col-form-label\">Utilisateur</label>
+<div class=\"col-sm-10\">
+<select class=\"form-group\" name=\"utilisateur\">
+<option class=\"form-group\" value=\"-1\"></option>
+";
+        // line 67
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["listeUsers"]) || array_key_exists("listeUsers", $context) ? $context["listeUsers"] : (function () { throw new RuntimeError('Variable "listeUsers" does not exist.', 67, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
+            // line 68
+            echo "<option class=\"form-group\" value= ";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "id", [], "any", false, false, false, 68), "html", null, true);
+            echo ">
+";
+            // line 69
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "nom", [], "any", false, false, false, 69), "html", null, true);
+            echo " ";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "prenom", [], "any", false, false, false, 69), "html", null, true);
+            echo "
+</option>
+";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 72
+        echo "</select>
 </div>
 </div>
 </fieldset>
@@ -163,7 +234,7 @@ class __TwigTemplate_6a37b9ae39e500069d6b975dedbdc8a7d02919aefd0315ac4ad1efc3494
 
     public function getDebugInfo()
     {
-        return array (  118 => 19,  107 => 17,  103 => 16,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  210 => 72,  199 => 69,  194 => 68,  190 => 67,  180 => 59,  173 => 57,  169 => 55,  165 => 53,  163 => 52,  159 => 50,  157 => 49,  152 => 48,  148 => 47,  118 => 19,  107 => 17,  103 => 16,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -192,7 +263,7 @@ class __TwigTemplate_6a37b9ae39e500069d6b975dedbdc8a7d02919aefd0315ac4ad1efc3494
 <div class=\"form-group row\">
 <label for=\"staticPrenom\" class=\"col-sm-2 col-form-label\">Nom</label>
 <div class=\"col-sm-10\">
-<input type=\"text\" class=\"form-group\" id=\"nom\"required name=\"nom\">
+<input type=\"text\" class=\"form-group\" id=\"nom\" required name=\"nom\">
 </div>
 </div>
 <div class=\"form-group row\">
@@ -208,6 +279,38 @@ class __TwigTemplate_6a37b9ae39e500069d6b975dedbdc8a7d02919aefd0315ac4ad1efc3494
 <input type=\"checkbox\" class=\"custom-control-input\" id=\"customSwitch1\" checked=\"\" name=\"choix\">
 <label class=\"custom-control-label\" for=\"customSwitch1\">Actif / Inactif</label>
 </div>
+</div>
+</div>
+<div class=\"form-group row\">
+<label for=\"staticNom\" class=\"col-sm-2 col-form-label\">Autorisation</label>
+<div class=\"col-sm-10\">
+<select class=\"form-group\" name=\"autorisation\">
+{% for item in listeAutorisation %}
+<option class=\"form-group\" value= {{ item.id }}>
+{% if item.ecriture == 1 %}
+Ecriture
+{% endif %}
+{% if item.lecture == 1 %}
+Lecture
+{% else %}
+Fichier protégé
+{% endif %}
+</option>
+{% endfor %}
+</select>
+</div>
+</div>
+<div class=\"form-group row\">
+<label for=\"staticNom\" class=\"col-sm-2 col-form-label\">Utilisateur</label>
+<div class=\"col-sm-10\">
+<select class=\"form-group\" name=\"utilisateur\">
+<option class=\"form-group\" value=\"-1\"></option>
+{% for item in listeUsers %}
+<option class=\"form-group\" value= {{ item.id }}>
+{{ item.nom }} {{ item.prenom }}
+</option>
+{% endfor %}
+</select>
 </div>
 </div>
 </fieldset>

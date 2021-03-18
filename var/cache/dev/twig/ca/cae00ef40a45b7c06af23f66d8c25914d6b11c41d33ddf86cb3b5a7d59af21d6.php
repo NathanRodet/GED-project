@@ -98,31 +98,34 @@ class __TwigTemplate_c2895965be706cd12931e50a658f210a18cedb7569c536fd90b9584e9fd
 </tr>
 </thead>
 <tbody>
+
 ";
-        // line 17
+        // line 18
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["listeGed"]) || array_key_exists("listeGed", $context) ? $context["listeGed"] : (function () { throw new RuntimeError('Variable "listeGed" does not exist.', 17, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["listeGed"]) || array_key_exists("listeGed", $context) ? $context["listeGed"] : (function () { throw new RuntimeError('Variable "listeGed" does not exist.', 18, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-            // line 18
+            // line 19
             echo "<tr class=\"table\">
 <th scope=\"row\">";
-            // line 19
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "id", [], "any", false, false, false, 19), "html", null, true);
+            // line 20
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "documentId", [], "any", false, false, false, 20), "id", [], "any", false, false, false, 20), "html", null, true);
             echo "</th>
 <td>";
-            // line 20
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "nom", [], "any", false, false, false, 20), "html", null, true);
+            // line 21
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "documentId", [], "any", false, false, false, 21), "nom", [], "any", false, false, false, 21), "html", null, true);
             echo "</td>
 <td>";
-            // line 21
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "typeId", [], "any", false, false, false, 21), "type", [], "any", false, false, false, 21), "html", null, true);
+            // line 22
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "documentId", [], "any", false, false, false, 22), "typeId", [], "any", false, false, false, 22), "type", [], "any", false, false, false, 22), "html", null, true);
             echo "</td>
-<td>
-<a href=\"/deleteGed/";
+<td><a href=\"/deleteGed/";
             // line 23
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "id", [], "any", false, false, false, 23), "html", null, true);
-            echo "\">
-<i class=\"bi bi-trash\"></i></a>
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "documentId", [], "any", false, false, false, 23), "id", [], "any", false, false, false, 23), "html", null, true);
+            echo "\"><i class=\"bi bi-trash\"></i></a>
+  <a href=\"/upload/";
+            // line 24
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "documentId", [], "any", false, false, false, 24), "chemin", [], "any", false, false, false, 24), "html", null, true);
+            echo "\"><i class=\"bi bi-cloud-download-fill\"></i></a>
 </td>
 </tr>
 ";
@@ -131,7 +134,9 @@ class __TwigTemplate_c2895965be706cd12931e50a658f210a18cedb7569c536fd90b9584e9fd
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 28
-        echo "</tbody>
+        echo "
+
+</tbody>
 </table>
 
 ";
@@ -155,7 +160,7 @@ class __TwigTemplate_c2895965be706cd12931e50a658f210a18cedb7569c536fd90b9584e9fd
 
     public function getDebugInfo()
     {
-        return array (  134 => 28,  123 => 23,  118 => 21,  114 => 20,  110 => 19,  107 => 18,  103 => 17,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  137 => 28,  127 => 24,  123 => 23,  119 => 22,  115 => 21,  111 => 20,  108 => 19,  104 => 18,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -176,17 +181,19 @@ class __TwigTemplate_c2895965be706cd12931e50a658f210a18cedb7569c536fd90b9584e9fd
 </tr>
 </thead>
 <tbody>
+
 {% for item in listeGed %}
 <tr class=\"table\">
-<th scope=\"row\">{{ item.id }}</th>
-<td>{{ item.nom }}</td>
-<td>{{ item.typeId.type }}</td>
-<td>
-<a href=\"/deleteGed/{{ item.id }}\">
-<i class=\"bi bi-trash\"></i></a>
+<th scope=\"row\">{{ item.documentId.id }}</th>
+<td>{{ item.documentId.nom }}</td>
+<td>{{ item.documentId.typeId.type }}</td>
+<td><a href=\"/deleteGed/{{ item.documentId.id }}\"><i class=\"bi bi-trash\"></i></a>
+  <a href=\"/upload/{{ item.documentId.chemin }}\"><i class=\"bi bi-cloud-download-fill\"></i></a>
 </td>
 </tr>
 {% endfor %}
+
+
 </tbody>
 </table>
 

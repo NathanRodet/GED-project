@@ -56,6 +56,16 @@ class AuthentificationController extends AbstractController
         ]);
     }
 
+    #[Route('/logout', name: 'logout')]
+    public function logout(Request $request, EntityManagerInterface $manager): Response
+    {
+    $sess = $request->getSession();
+    $sess->remove("idUtilisateur");
+    $sess->invalidate();
+    $sess->clear();
+    $sess=$request->getSession()->clear();
+    return $this->redirectToRoute('authentification');
+    }
 
     #[Route('/connexion', name: 'connexion')]
     public function connexion(Request $request, EntityManagerInterface $manager): Response

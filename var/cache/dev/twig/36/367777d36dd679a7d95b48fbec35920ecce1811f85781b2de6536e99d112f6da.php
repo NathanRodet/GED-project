@@ -95,13 +95,17 @@ class __TwigTemplate_9529eb3052795b4a0e8d7f0d062c303f1771764cff7907286ffd0236a44
                     <a class=\"dropdown-item\" href=\"/listeGed\">Liste</a>
                     <a class=\"dropdown-item\" href=\"/uploadGed\">Upload</a>
                     </li>
+                    <li class=\"nav-item active\">
+                        <a class=\"nav-link\" href=\"/logout\">Logout
+                        </a>
+                    </li>
                     </ul>
                 </div>
             </nav>
         ";
-        // line 49
+        // line 53
         $this->displayBlock('body', $context, $blocks);
-        // line 50
+        // line 54
         echo "        </div>
     </body>
         <script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\" integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\" crossorigin=\"anonymous\"></script>
@@ -175,7 +179,7 @@ class __TwigTemplate_9529eb3052795b4a0e8d7f0d062c303f1771764cff7907286ffd0236a44
 
     }
 
-    // line 49
+    // line 53
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -200,7 +204,7 @@ class __TwigTemplate_9529eb3052795b4a0e8d7f0d062c303f1771764cff7907286ffd0236a44
 
     public function getDebugInfo()
     {
-        return array (  179 => 49,  161 => 9,  150 => 7,  140 => 6,  121 => 5,  105 => 50,  103 => 49,  62 => 10,  59 => 9,  57 => 6,  53 => 5,  47 => 1,);
+        return array (  183 => 53,  165 => 9,  154 => 7,  144 => 6,  125 => 5,  109 => 54,  107 => 53,  62 => 10,  59 => 9,  57 => 6,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -249,6 +253,10 @@ class __TwigTemplate_9529eb3052795b4a0e8d7f0d062c303f1771764cff7907286ffd0236a44
                     <div class=\"dropdown-menu\">
                     <a class=\"dropdown-item\" href=\"/listeGed\">Liste</a>
                     <a class=\"dropdown-item\" href=\"/uploadGed\">Upload</a>
+                    </li>
+                    <li class=\"nav-item active\">
+                        <a class=\"nav-link\" href=\"/logout\">Logout
+                        </a>
                     </li>
                     </ul>
                 </div>
