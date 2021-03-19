@@ -23,6 +23,7 @@ return [
         '/uploadGed' => [[['_route' => 'uploadGed', '_controller' => 'App\\Controller\\GedController::uploadGed'], null, null, null, false, false, null]],
         '/insertGed' => [[['_route' => 'insertGed', '_controller' => 'App\\Controller\\GedController::insertGed'], null, null, null, false, false, null]],
         '/listeGed' => [[['_route' => 'listeGed', '_controller' => 'App\\Controller\\GedController::listeGed'], null, null, null, false, false, null]],
+        '/partageGed' => [[['_route' => 'partageGed', '_controller' => 'App\\Controller\\GedController::partageGed'], null, null, null, false, false, null]],
         '/genre' => [[['_route' => 'genre', '_controller' => 'App\\Controller\\GenreController::index'], null, null, null, false, false, null]],
         '/insertGenre' => [[['_route' => 'insertGenre', '_controller' => 'App\\Controller\\GenreController::insertGenre'], null, null, null, false, false, null]],
         '/insertGenreBdd' => [[['_route' => 'insertGenreBdd', '_controller' => 'App\\Controller\\GenreController::insertGenreBdd'], null, null, null, false, false, null]],

@@ -5361,7 +5361,7 @@
         <argument key="manager" type="service" id="doctrine.orm.default_entity_manager"/>
       </argument>
     </service>
-    <service id=".service_locator.YLbNcx1" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.kNLVfIZ" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AuthentificationController::connexion" type="service" id=".service_locator.oiABibH"/>
@@ -5373,6 +5373,7 @@
         <argument key="App\Controller\GedController::deleteGed" type="service" id=".service_locator.V61_Obo"/>
         <argument key="App\Controller\GedController::insertGed" type="service" id=".service_locator.oiABibH"/>
         <argument key="App\Controller\GedController::listeGed" type="service" id=".service_locator.oiABibH"/>
+        <argument key="App\Controller\GedController::partageGed" type="service" id=".service_locator.oiABibH"/>
         <argument key="App\Controller\GedController::uploadGed" type="service" id=".service_locator.oiABibH"/>
         <argument key="App\Controller\GenreController::deleteGenre" type="service" id=".service_locator.2asLwmG"/>
         <argument key="App\Controller\GenreController::insertGenreBdd" type="service" id=".service_locator.oiABibH"/>
@@ -5392,6 +5393,7 @@
         <argument key="App\Controller\GedController:deleteGed" type="service" id=".service_locator.V61_Obo"/>
         <argument key="App\Controller\GedController:insertGed" type="service" id=".service_locator.oiABibH"/>
         <argument key="App\Controller\GedController:listeGed" type="service" id=".service_locator.oiABibH"/>
+        <argument key="App\Controller\GedController:partageGed" type="service" id=".service_locator.oiABibH"/>
         <argument key="App\Controller\GedController:uploadGed" type="service" id=".service_locator.oiABibH"/>
         <argument key="App\Controller\GenreController:deleteGenre" type="service" id=".service_locator.2asLwmG"/>
         <argument key="App\Controller\GenreController:insertGenreBdd" type="service" id=".service_locator.oiABibH"/>
@@ -5872,12 +5874,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.YLbNcx1"/>
+      <argument type="service" id=".service_locator.kNLVfIZ"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.YLbNcx1"/>
+      <argument type="service" id=".service_locator.kNLVfIZ"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface">
       <argument type="collection"/>
@@ -6288,7 +6290,7 @@
     <service id="Symfony\Component\Security\Core\User\UserCheckerInterface" alias="security.user_checker"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.Kbr2i2X" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.YLbNcx1"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.kNLVfIZ"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>

@@ -27,6 +27,7 @@ return [
     'insertGed' => [[], ['_controller' => 'App\\Controller\\GedController::insertGed'], [], [['text', '/insertGed']], [], []],
     'listeGed' => [[], ['_controller' => 'App\\Controller\\GedController::listeGed'], [], [['text', '/listeGed']], [], []],
     'deleteGed' => [['id'], ['_controller' => 'App\\Controller\\GedController::deleteGed'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/deleteGed']], [], []],
+    'partageGed' => [[], ['_controller' => 'App\\Controller\\GedController::partageGed'], [], [['text', '/partageGed']], [], []],
     'genre' => [[], ['_controller' => 'App\\Controller\\GenreController::index'], [], [['text', '/genre']], [], []],
     'insertGenre' => [[], ['_controller' => 'App\\Controller\\GenreController::insertGenre'], [], [['text', '/insertGenre']], [], []],
     'insertGenreBdd' => [[], ['_controller' => 'App\\Controller\\GenreController::insertGenreBdd'], [], [['text', '/insertGenreBdd']], [], []],
