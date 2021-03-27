@@ -164,7 +164,8 @@ class __TwigTemplate_c2895965be706cd12931e50a658f210a18cedb7569c536fd90b9584e9fd
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
             // line 48
-            echo "</select>
+            echo "
+</select>
 </div>
 </div>
 <div class=\"form-group row\">
@@ -172,39 +173,39 @@ class __TwigTemplate_c2895965be706cd12931e50a658f210a18cedb7569c536fd90b9584e9fd
 <div class=\"col-sm-18\">
 <select class=\"form-group\" name=\"autorisation\">
 ";
-            // line 55
+            // line 56
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable((isset($context["listeAutorisations"]) || array_key_exists("listeAutorisations", $context) ? $context["listeAutorisations"] : (function () { throw new RuntimeError('Variable "listeAutorisations" does not exist.', 55, $this->source); })()));
+            $context['_seq'] = twig_ensure_traversable((isset($context["listeAutorisations"]) || array_key_exists("listeAutorisations", $context) ? $context["listeAutorisations"] : (function () { throw new RuntimeError('Variable "listeAutorisations" does not exist.', 56, $this->source); })()));
             foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-                // line 56
+                // line 57
                 echo "<option class=\"form-group\" value= ";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "id", [], "any", false, false, false, 56), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "id", [], "any", false, false, false, 57), "html", null, true);
                 echo ">
 ";
-                // line 57
-                if ((twig_get_attribute($this->env, $this->source, $context["item"], "ecriture", [], "any", false, false, false, 57) == 1)) {
-                    // line 58
+                // line 58
+                if ((twig_get_attribute($this->env, $this->source, $context["item"], "ecriture", [], "any", false, false, false, 58) == 1)) {
+                    // line 59
                     echo "Ecriture
 ";
                 }
-                // line 60
-                if ((twig_get_attribute($this->env, $this->source, $context["item"], "lecture", [], "any", false, false, false, 60) == 1)) {
-                    // line 61
+                // line 61
+                if ((twig_get_attribute($this->env, $this->source, $context["item"], "lecture", [], "any", false, false, false, 61) == 1)) {
+                    // line 62
                     echo "Lecture
 ";
                 } else {
-                    // line 63
+                    // line 64
                     echo "Fichier protégé
 ";
                 }
-                // line 65
+                // line 66
                 echo "</option>
 ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 67
+            // line 68
             echo "</select>
 </div>
 </div>
@@ -222,40 +223,40 @@ class __TwigTemplate_c2895965be706cd12931e50a658f210a18cedb7569c536fd90b9584e9fd
 </div>
 </div>
 <!-- fin de chaque modal -->
-<tr class=\"table\">
-<th scope=\"row\">";
-            // line 85
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "documentId", [], "any", false, false, false, 85), "id", [], "any", false, false, false, 85), "html", null, true);
-            echo "</th>
-<td>";
+  <tr class=\"table\">
+  <th scope=\"row\">";
             // line 86
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "documentId", [], "any", false, false, false, 86), "nom", [], "any", false, false, false, 86), "html", null, true);
-            echo "</td>
-<td>";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "documentId", [], "any", false, false, false, 86), "id", [], "any", false, false, false, 86), "html", null, true);
+            echo "</th>
+  <td>";
             // line 87
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "documentId", [], "any", false, false, false, 87), "typeId", [], "any", false, false, false, 87), "type", [], "any", false, false, false, 87), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "documentId", [], "any", false, false, false, 87), "nom", [], "any", false, false, false, 87), "html", null, true);
             echo "</td>
-<td>
-<a href=\"/deleteGed/";
-            // line 89
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "documentId", [], "any", false, false, false, 89), "id", [], "any", false, false, false, 89), "html", null, true);
-            echo "\"><i class=\"bi bi-trash\"></i></a>
-<a href=\"/upload/";
+  <td>";
+            // line 88
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "documentId", [], "any", false, false, false, 88), "typeId", [], "any", false, false, false, 88), "type", [], "any", false, false, false, 88), "html", null, true);
+            echo "
+  <td>
+        <a href=\"/deleteGed/";
             // line 90
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "documentId", [], "any", false, false, false, 90), "chemin", [], "any", false, false, false, 90), "html", null, true);
-            echo "\"><i class=\"bi bi-cloud-download-fill\"></i></a>
-";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "documentId", [], "any", false, false, false, 90), "id", [], "any", false, false, false, 90), "html", null, true);
+            echo "\"><i class=\"bi bi-trash\"></i></a>
+  <a href=\"/upload/";
             // line 91
-            if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "autorisationId", [], "any", false, false, false, 91), "id", [], "any", false, false, false, 91) == 1)) {
-                // line 92
-                echo "<a href=\"#exampleModal";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "documentId", [], "any", false, false, false, 92), "id", [], "any", false, false, false, 92), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "documentId", [], "any", false, false, false, 91), "chemin", [], "any", false, false, false, 91), "html", null, true);
+            echo "\"><i class=\"bi bi-cloud-download-fill\"></i></a>
+  ";
+            // line 92
+            if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "autorisationId", [], "any", false, false, false, 92), "id", [], "any", false, false, false, 92) == 1)) {
+                // line 93
+                echo "  <a href=\"#exampleModal";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "documentId", [], "any", false, false, false, 93), "id", [], "any", false, false, false, 93), "html", null, true);
                 echo "\" data-toggle=\"modal\" data-target=\"#exampleModal";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "documentId", [], "any", false, false, false, 92), "id", [], "any", false, false, false, 92), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "documentId", [], "any", false, false, false, 93), "id", [], "any", false, false, false, 93), "html", null, true);
                 echo "\"><i class=\"bi bi-share-fill\"></i></a>
-";
+  ";
             }
-            // line 94
+            // line 95
             echo "</td>
 </tr>
 ";
@@ -263,7 +264,7 @@ class __TwigTemplate_c2895965be706cd12931e50a658f210a18cedb7569c536fd90b9584e9fd
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 97
+        // line 98
         echo "</tbody>
 </table>
 
@@ -288,7 +289,7 @@ class __TwigTemplate_c2895965be706cd12931e50a658f210a18cedb7569c536fd90b9584e9fd
 
     public function getDebugInfo()
     {
-        return array (  267 => 97,  259 => 94,  251 => 92,  249 => 91,  245 => 90,  241 => 89,  236 => 87,  232 => 86,  228 => 85,  208 => 67,  201 => 65,  197 => 63,  193 => 61,  191 => 60,  187 => 58,  185 => 57,  180 => 56,  176 => 55,  167 => 48,  156 => 45,  151 => 44,  147 => 43,  135 => 36,  119 => 23,  110 => 19,  107 => 18,  103 => 17,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  268 => 98,  260 => 95,  252 => 93,  250 => 92,  246 => 91,  242 => 90,  237 => 88,  233 => 87,  229 => 86,  209 => 68,  202 => 66,  198 => 64,  194 => 62,  192 => 61,  188 => 59,  186 => 58,  181 => 57,  177 => 56,  167 => 48,  156 => 45,  151 => 44,  147 => 43,  135 => 36,  119 => 23,  110 => 19,  107 => 18,  103 => 17,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -340,6 +341,7 @@ class __TwigTemplate_c2895965be706cd12931e50a658f210a18cedb7569c536fd90b9584e9fd
 {{ item.nom }} {{ item.prenom }}
 </option>
 {% endfor %}
+
 </select>
 </div>
 </div>
@@ -376,16 +378,16 @@ Fichier protégé
 </div>
 </div>
 <!-- fin de chaque modal -->
-<tr class=\"table\">
-<th scope=\"row\">{{ item.documentId.id }}</th>
-<td>{{ item.documentId.nom }}</td>
-<td>{{ item.documentId.typeId.type }}</td>
-<td>
-<a href=\"/deleteGed/{{ item.documentId.id }}\"><i class=\"bi bi-trash\"></i></a>
-<a href=\"/upload/{{ item.documentId.chemin }}\"><i class=\"bi bi-cloud-download-fill\"></i></a>
-{% if item.autorisationId.id == 1 %}
-<a href=\"#exampleModal{{ item.documentId.id }}\" data-toggle=\"modal\" data-target=\"#exampleModal{{ item.documentId.id }}\"><i class=\"bi bi-share-fill\"></i></a>
-{% endif %}
+  <tr class=\"table\">
+  <th scope=\"row\">{{ item.documentId.id }}</th>
+  <td>{{ item.documentId.nom }}</td>
+  <td>{{ item.documentId.typeId.type }}
+  <td>
+        <a href=\"/deleteGed/{{ item.documentId.id }}\"><i class=\"bi bi-trash\"></i></a>
+  <a href=\"/upload/{{ item.documentId.chemin }}\"><i class=\"bi bi-cloud-download-fill\"></i></a>
+  {% if item.autorisationId.id == 1 %}
+  <a href=\"#exampleModal{{ item.documentId.id }}\" data-toggle=\"modal\" data-target=\"#exampleModal{{ item.documentId.id }}\"><i class=\"bi bi-share-fill\"></i></a>
+  {% endif %}
 </td>
 </tr>
 {% endfor %}

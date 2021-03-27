@@ -111,6 +111,7 @@ class GedController extends AbstractController
 
 
 
+
     #[Route('/deleteGed/{id}', name: 'deleteGed')]
     public function deleteGed(Request $request, EntityManagerInterface $manager, Document $id): Response
     {

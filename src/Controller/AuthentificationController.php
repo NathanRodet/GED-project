@@ -9,6 +9,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use App\Entity\Utilisateur;
 use App\Entity\Acces;
+use App\Entity\Autorisation;
 
 class AuthentificationController extends AbstractController
 {
@@ -106,12 +107,26 @@ class AuthentificationController extends AbstractController
             //Récupération du noombre de document
             $listeDocuments = $manager->getRepository(Acces::class)->findByUtilisateurId($sess->get("idUtilisateur"));
             $nbDocument = 0;
+            //Requête qui récupère la liste des Users
+            $listeGed = $manager->getRepository(Acces::class)->findByUtilisateurId($sess->get("idUtilisateur"));
+
+            $flag = 0; // indique que le document est privé
+            $nbDocument = 0;
             foreach($listeDocuments as $val){
                 $nbDocument++;
+                foreach($listeDocuments as $val){
+                    if ($val->getUtilisateurId())
+                }
             }
+
             return $this->render('authentification/dashboard.html.twig',[
              'controller_name' => "Espace Client",
-             'nb_document' => $nbDocument
+             'nb_document' => $nbDocument,
+
+             'controller_name' => "Liste des Documents",
+             'listeGed' => $listeGed,
+             'listeUsers' => $manager->getRepository(Utilisateur::class)->findAll(),
+             'listeAutorisations' => $manager->getRepository(Autorisation::class)->findAll(),
              ]);
         }else{
             return $this->redirectToRoute('authentification');
