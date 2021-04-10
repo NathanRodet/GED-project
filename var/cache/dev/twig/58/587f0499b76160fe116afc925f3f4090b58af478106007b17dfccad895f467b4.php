@@ -94,12 +94,12 @@ class __TwigTemplate_3554687d65f3ceed371bf766e3da46704295c1dd139265b578b62c0854e
         $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 7, $this->source); })()), "flashes", [0 => "notice"], "method", false, false, false, 7));
         foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
             // line 8
-            echo "<div class=\"flash-notice alert alert-dismissible alert-danger\">
-";
+            echo "    <div class=\"flash-notice alert alert-dismissible alert-danger\">
+        ";
             // line 9
             echo twig_escape_filter($this->env, $context["message"], "html", null, true);
             echo "
-</div>
+    </div>
 ";
         }
         $_parent = $context['_parent'];
@@ -107,37 +107,44 @@ class __TwigTemplate_3554687d65f3ceed371bf766e3da46704295c1dd139265b578b62c0854e
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 12
         echo "<table class=\"table table-hover\">
-<thead>
-<tr>
-<th scope=\"col\">Nom</th>
-<th scope=\"col\">Actions</th>
-</tr>
-</thead>
-<tbody>
-";
+  <thead>
+    <tr>
+      <th scope=\"col\">Nom</th>
+      <th scope=\"col\">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+\t";
         // line 20
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["listeGenre"]) || array_key_exists("listeGenre", $context) ? $context["listeGenre"] : (function () { throw new RuntimeError('Variable "listeGenre" does not exist.', 20, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-            // line 21
-            echo "<tr class=\"table\">
-<th scope=\"row\">";
+            echo "    
+    <tr class=\"table\">
+      <th scope=\"row\">";
             // line 22
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "type", [], "any", false, false, false, 22), "html", null, true);
             echo "</th>
-<td><a href=\"/deleteGenre/";
-            // line 23
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "id", [], "any", false, false, false, 23), "html", null, true);
-            echo "\"><i class=\"bi bi-trash\"></i></a></td>
-</tr>
-";
+      <td>
+\t\t<a href=\"/deleteGenre/";
+            // line 24
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "id", [], "any", false, false, false, 24), "html", null, true);
+            echo "\"><i class=\"bi bi-trash\"></i></a>
+\t\t<a href=\"/modifGenre/";
+            // line 25
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "id", [], "any", false, false, false, 25), "html", null, true);
+            echo "\"><i class=\"bi bi-arrow-repeat\"></i></a>
+\t  </td>
+    </tr>
+\t";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 26
-        echo "</tbody>
+        // line 29
+        echo "  </tbody>
 </table>
+
 
 ";
         
@@ -160,7 +167,7 @@ class __TwigTemplate_3554687d65f3ceed371bf766e3da46704295c1dd139265b578b62c0854e
 
     public function getDebugInfo()
     {
-        return array (  139 => 26,  130 => 23,  126 => 22,  123 => 21,  119 => 20,  109 => 12,  100 => 9,  97 => 8,  93 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  145 => 29,  135 => 25,  131 => 24,  126 => 22,  119 => 20,  109 => 12,  100 => 9,  97 => 8,  93 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -172,26 +179,30 @@ class __TwigTemplate_3554687d65f3ceed371bf766e3da46704295c1dd139265b578b62c0854e
 {% block body %}
 <h1>{{ controller_name }}</h1>
 {% for message in app.flashes('notice') %}
-<div class=\"flash-notice alert alert-dismissible alert-danger\">
-{{ message }}
-</div>
+    <div class=\"flash-notice alert alert-dismissible alert-danger\">
+        {{ message }}
+    </div>
 {% endfor %}
 <table class=\"table table-hover\">
-<thead>
-<tr>
-<th scope=\"col\">Nom</th>
-<th scope=\"col\">Actions</th>
-</tr>
-</thead>
-<tbody>
-{% for item in listeGenre %}
-<tr class=\"table\">
-<th scope=\"row\">{{ item.type }}</th>
-<td><a href=\"/deleteGenre/{{ item.id }}\"><i class=\"bi bi-trash\"></i></a></td>
-</tr>
-{% endfor %}
-</tbody>
+  <thead>
+    <tr>
+      <th scope=\"col\">Nom</th>
+      <th scope=\"col\">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+\t{% for item in listeGenre %}    
+    <tr class=\"table\">
+      <th scope=\"row\">{{ item.type }}</th>
+      <td>
+\t\t<a href=\"/deleteGenre/{{ item.id }}\"><i class=\"bi bi-trash\"></i></a>
+\t\t<a href=\"/modifGenre/{{ item.id }}\"><i class=\"bi bi-arrow-repeat\"></i></a>
+\t  </td>
+    </tr>
+\t{% endfor %}
+  </tbody>
 </table>
+
 
 {% endblock %}", "genre/listeGenre.html.twig", "C:\\Users\\rodet\\Documents\\GitHub\\GED-project\\templates\\genre\\listeGenre.html.twig");
     }

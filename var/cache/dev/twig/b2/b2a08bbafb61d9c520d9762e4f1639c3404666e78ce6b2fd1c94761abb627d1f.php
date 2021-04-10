@@ -89,49 +89,46 @@ class __TwigTemplate_d7c1933aee56c072a81df30e05178ac86dd0076a1cfb4a9f99dfc20a2fc
         echo twig_escape_filter($this->env, (isset($context["controller_name"]) || array_key_exists("controller_name", $context) ? $context["controller_name"] : (function () { throw new RuntimeError('Variable "controller_name" does not exist.', 6, $this->source); })()), "html", null, true);
         echo "</h1>
 <table class=\"table table-hover\">
-<thead>
-<tr>
-<th scope=\"col\">Nom</th>
-<th scope=\"col\">Prénom</th>
-<th scope=\"col\">N° de contrat</th>
-<th scope=\"col\">Actions</th>
-</tr>
-</thead>
-<tbody>
-";
+  <thead>
+    <tr>
+      <th scope=\"col\">Nom</th>
+      <th scope=\"col\">Prénom</th>
+      <th scope=\"col\">N° de contrat</th>
+      <th scope=\"col\">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+\t";
         // line 17
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["listeUser"]) || array_key_exists("listeUser", $context) ? $context["listeUser"] : (function () { throw new RuntimeError('Variable "listeUser" does not exist.', 17, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-            // line 18
-            echo "<tr class=\"table\">
-<th scope=\"row\">";
+            echo "    
+    <tr class=\"table\">
+      <th scope=\"row\">";
             // line 19
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "nom", [], "any", false, false, false, 19), "html", null, true);
             echo "</th>
-<td>";
+      <td>";
             // line 20
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "prenom", [], "any", false, false, false, 20), "html", null, true);
             echo "</td>
-<td>";
+      <td>";
             // line 21
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "id", [], "any", false, false, false, 21), "html", null, true);
             echo "</td>
-<td>
-<a href=\"/deleteUser/";
-            // line 23
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "id", [], "any", false, false, false, 23), "html", null, true);
-            echo "\">
-<i class=\"bi bi-trash\"></i></a>
-</td>
-</tr>
-";
+      <td><a href=\"/deleteUser/";
+            // line 22
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "id", [], "any", false, false, false, 22), "html", null, true);
+            echo "\"><i class=\"bi bi-trash\"></i></a></td>
+    </tr>
+\t";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 28
-        echo "</tbody>
+        // line 25
+        echo "  </tbody>
 </table>
 
 ";
@@ -155,7 +152,7 @@ class __TwigTemplate_d7c1933aee56c072a81df30e05178ac86dd0076a1cfb4a9f99dfc20a2fc
 
     public function getDebugInfo()
     {
-        return array (  134 => 28,  123 => 23,  118 => 21,  114 => 20,  110 => 19,  107 => 18,  103 => 17,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  131 => 25,  122 => 22,  118 => 21,  114 => 20,  110 => 19,  103 => 17,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -167,27 +164,24 @@ class __TwigTemplate_d7c1933aee56c072a81df30e05178ac86dd0076a1cfb4a9f99dfc20a2fc
 {% block body %}
 <h1>{{ controller_name }}</h1>
 <table class=\"table table-hover\">
-<thead>
-<tr>
-<th scope=\"col\">Nom</th>
-<th scope=\"col\">Prénom</th>
-<th scope=\"col\">N° de contrat</th>
-<th scope=\"col\">Actions</th>
-</tr>
-</thead>
-<tbody>
-{% for item in listeUser %}
-<tr class=\"table\">
-<th scope=\"row\">{{ item.nom }}</th>
-<td>{{ item.prenom }}</td>
-<td>{{ item.id }}</td>
-<td>
-<a href=\"/deleteUser/{{ item.id }}\">
-<i class=\"bi bi-trash\"></i></a>
-</td>
-</tr>
-{% endfor %}
-</tbody>
+  <thead>
+    <tr>
+      <th scope=\"col\">Nom</th>
+      <th scope=\"col\">Prénom</th>
+      <th scope=\"col\">N° de contrat</th>
+      <th scope=\"col\">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+\t{% for item in listeUser %}    
+    <tr class=\"table\">
+      <th scope=\"row\">{{ item.nom }}</th>
+      <td>{{ item.prenom }}</td>
+      <td>{{ item.id }}</td>
+      <td><a href=\"/deleteUser/{{ item.id }}\"><i class=\"bi bi-trash\"></i></a></td>
+    </tr>
+\t{% endfor %}
+  </tbody>
 </table>
 
 {% endblock %}", "authentification/listeUser.html.twig", "C:\\Users\\rodet\\Documents\\GitHub\\GED-project\\templates\\authentification\\listeUser.html.twig");
