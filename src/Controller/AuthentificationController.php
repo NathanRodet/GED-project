@@ -17,131 +17,169 @@ class AuthentificationController extends AbstractController
     public function index(): Response
     {
         return $this->render('authentification/index.html.twig', [
-            'controller_name' => 'AuthentificationController',
+            'controller_name' => 'Bienvenue sur notre super plateforme.',
         ]);
     }
 
-    #[Route('/insertUser', name: 'insertUser')]
-    public function insertUser(): Response
-    {
-        return $this->render('authentification/insertUser.html.twig', [
-            'controller_name' => "Insertion d'un nouvel Utilisateur",
-        ]);
-    }
-
-    #[Route('/insertUserBdd', name: 'insertUserBDD')]
-    public function insertUserBdd(Request $request, EntityManagerInterface $manager): Response
-    {
-            $User = new Utilisateur();
-            $User->setNom($request->request->get('nom'));
-            $User->setPrenom($request->request->get('prenom'));
-            $User->setCode($request->request->get('code'));
-            $User->setSalt($request->request->get('salt'));
-
-            $manager->persist($User);
-            $manager->flush();
-            
-        return $this->render('authentification/insertUser.html.twig', [
-            'controller_name' => "Ajout en base de données.",
-        ]);
-    }
-
-    #[Route('/listeUser', name: 'listeUser')]
-    public function listeUser(Request $request, EntityManagerInterface $manager): Response
-    {
-        //Requête qui récupère la liste des users
-            $listeUsers = $manager->getRepository(Utilisateur::class)->findAll();
-            
-        return $this->render('authentification/listeUser.html.twig', [
-        'controller_name' => "Liste des Utilisateurs",
-        'listeUser' => $listeUsers,
-        ]);
-    }
-
-    #[Route('/logout', name: 'logout')]
+	 #[Route('/logout', name: 'logout')]
     public function logout(Request $request, EntityManagerInterface $manager): Response
     {
-    $sess = $request->getSession();
-    $sess->remove("idUtilisateur");
-    $sess->invalidate();
-    $sess->clear();
-    $sess=$request->getSession()->clear();
-    return $this->redirectToRoute('authentification');
+
+        // On récupère la session de l'utilisateur puis on clear pour le déconnecter.
+		$sess = $request->getSession();
+		$sess->remove("idUtilisateur");
+		$sess->invalidate();
+		$sess->clear();
+		$sess=$request->getSession()->clear();
+        // Renvoie vers la page d'authentification
+        return $this->redirectToRoute('authentification');
     }
 
-    #[Route('/connexion', name: 'connexion')]
+	#[Route('/insertUser', name: 'insertUser')]
+    public function insertUser(Request $request): Response
+    {
+        //Page insertUser
+		$sess = $request->getSession();
+		if($sess->get("idUtilisateur")){
+			return $this->render('authentification/insertUser.html.twig', [
+				'controller_name' => "Insertion d'un nouvel Utilisateur",
+			]);
+		}else{
+			return $this->redirectToRoute('authentification');
+		}
+    }
+	#[Route('/insertUserBdd', name: 'insertUserBdd')]
+    public function insertUserBdd(Request $request, EntityManagerInterface $manager): Response
+    {
+        //Après avoir récupérer les infos sur l'interface graphique on les envoies en BDD
+		$sess = $request->getSession();
+		if($sess->get("idUtilisateur")){
+			$User = new Utilisateur();
+			$User->setNom($request->request->get('nom'));
+			$User->setPrenom($request->request->get('prenom'));
+			$User->setCode($request->request->get('code'));
+			$User->setSalt($request->request->get('salt'));
+			
+			$manager->persist($User);
+			$manager->flush();
+			
+				
+			return $this->render('authentification/insertUser.html.twig', [
+				'controller_name' => "Ajout en base de données.",
+			]);
+		}else{
+			return $this->redirectToRoute('authentification');
+		}
+    }
+	#[Route('/listeUser', name: 'listeUser')]
+    public function listeUser(Request $request, EntityManagerInterface $manager): Response
+    {
+		$sess = $request->getSession();
+		if($sess->get("idUtilisateur")){
+			//Requête qui récupère la liste des Users
+			$listeUser = $manager->getRepository(Utilisateur::class)->findAll();
+					
+			return $this->render('authentification/listeUser.html.twig', [
+				'controller_name' => "Liste des Utilisateurs",
+				'listeUser' => $listeUser,
+			]);
+		}else{
+			return $this->redirectToRoute('authentification');
+		}
+    }
+	#[Route('/connexion', name: 'connexion')]
     public function connexion(Request $request, EntityManagerInterface $manager): Response
     {
-        //Récupération des identifiants de connexion
-        $identifiant = $request->request->get('login');
-        $password = $request->request->get('password');
-        //Test de l'existence d'un tel couple
-        $aUser = $manager->getRepository(Utilisateur::class)->findBy(["nom"=>$identifiant, "code"=>$password]);
-        if (sizeof($aUser)>0){
-            $utilisateur = new Utilisateur();
-            $utilisateur = $aUser[0];
-            //démarrage des variables de session
-            $sess = $request->getSession();
-            //Information de session
-            $sess->set("idUtilisateur", $utilisateur->getId());
-            $sess->set("nomUtilisateur", $utilisateur->getNom());
-            $sess->set("prenomUtilisateur", $utilisateur->getPrenom());
-
-            return $this->redirectToRoute('dashboard');    
-        }else{
-            return $this->redirectToRoute('authentification');
-        }
-        dd($identifiant, $password, $reponse);
-        return new response(1);
-        // return $this->render('authentification/insertUser.html.twig', [
-        // 'controller_name' => "Ajout en base de données.",
-        // ]);
+			//Récupération des identifiants de connexion
+			$identifiant = $request->request->get('login');
+			$password    = $request->request->get('password');
+			//Test de l'existence d'un tel couple
+			$aUser = $manager->getRepository(Utilisateur::class)->findBy(["nom"=>$identifiant, "code"=>$password]);
+			if (sizeof($aUser)>0){
+				$utilisateur = new Utilisateur;
+				$utilisateur = $aUser[0];
+				//démarrage des variables de session
+				$sess = $request->getSession();
+				//Information de session
+				$sess->set("idUtilisateur", $utilisateur->getId());
+				$sess->set("nomUtilisateur", $utilisateur->getNom());
+				$sess->set("prenomUtilisateur", $utilisateur->getPrenom());
+				
+				return $this->redirectToRoute('dashboard');
+			}else{
+				return $this->redirectToRoute('authentification');
+			}
+			dd($identifiant, $password, $reponse);
+			return new response(1);
+			// return $this->render('authentification/insertUser.html.twig', [
+				// 'controller_name' => "Ajout en base de données.",
+			// ]);
+		
     }
-
-
-    #[Route('/dashboard', name: 'dashboard')]
+	#[Route('/deleteUser/{id}', name: 'deleteUser')]
+    public function deleteUser(Request $request, EntityManagerInterface $manager, Utilisateur $id): Response
+    {
+        // Pour retirer un utilisateur, on récupère son id et on le clear.
+		$sess = $request->getSession();
+		if($sess->get("idUtilisateur")){
+			$manager->remove($id);
+			$manager->flush();
+			return $this->redirectToRoute('listeUser');
+		}else{
+			return $this->redirectToRoute('authentification');
+		}
+    }
+	#[Route('/dashboard', name: 'dashboard')]
     public function dashboard(Request $request, EntityManagerInterface $manager): Response
     {
-        $sess = $request->getSession();
-        if($sess->get("idUtilisateur")){
-            //Récupération du noombre de document
-            $listeDocuments = $manager->getRepository(Acces::class)->findByUtilisateurId($sess->get("idUtilisateur"));
-            $nbDocument = 0;
-            //Requête qui récupère la liste des Users
-            $listeGed = $manager->getRepository(Acces::class)->findByUtilisateurId($sess->get("idUtilisateur"));
-
-            $flag = 0; // indique que le document est privé
-            $nbDocument = 0;
-            foreach($listeDocuments as $val){
-                $nbDocument++;
-                foreach($listeDocuments as $val){
-                    if ($val->getUtilisateurId())
-                }
-            }
-
-            return $this->render('authentification/dashboard.html.twig',[
-             'controller_name' => "Espace Client",
-             'nb_document' => $nbDocument,
-
-             'controller_name' => "Liste des Documents",
-             'listeGed' => $listeGed,
-             'listeUsers' => $manager->getRepository(Utilisateur::class)->findAll(),
-             'listeAutorisations' => $manager->getRepository(Autorisation::class)->findAll(),
-             ]);
-        }else{
-            return $this->redirectToRoute('authentification');
-        }
+		$sess = $request->getSession();
+		if($sess->get("idUtilisateur")){
+			//*******************Requetes Mysql*******************
+			//Récupération du nombre de document
+			$listeDocuments = $manager->getRepository(Acces::class)->findByUtilisateurId($sess->get("idUtilisateur"));
+			$listeDocumentAll = $manager->getRepository(Acces::class)->findAll(); 
+			$listeUsers = $manager->getRepository(Utilisateur::class)->findAll();
+			$listeAutorisations = $manager->getRepository(Autorisation::class)->findAll();
+			//*********************Variables*********************
+			$flag = 0 ; //indique que le document privé
+			$nbDocument = 0;
+			$nbDocumentPrives = 0;
+			$documentPrives = Array();
+			$lastDocument = new \Datetime("2000-01-01");
+			
+			foreach($listeDocuments as $val){
+				$nbDocument++;	
+				$document = $val->getDocumentId()->getId();
+				if($val->getDocumentId()->getCreatedAt() > $lastDocument){
+					$lastDocument = $val->getDocumentId()->getCreatedAt();
+					$documentDate = $val->getDocumentId();
+					$autorisationDocument = $val->getautorisationId();
+					
+				}
+				dump($autorisationDocument);
+				foreach($listeDocumentAll as $val2){
+					if($val2->getDocumentId()->getId() == $document && $val2->getUtilisateurId()->getId() != $sess->get("idUtilisateur") )
+						$flag++;	
+				}
+				if($flag == 0){
+					$documentPrives[] = $val ;
+					$nbDocumentPrives ++;
+				}
+				$flag =0;
+			}
+			return $this->render('authentification/dashboard.html.twig',[
+			 'controller_name' => "Espace Client",
+			 'nb_document' => $nbDocument,
+			 'listeDocumentPrives' => $documentPrives,
+			 'nbDocumentPrives' => $nbDocumentPrives,
+			 'listeUsers' => $listeUsers,
+			 'listeAutorisations' => $listeAutorisations,
+			 'documentDate' => $documentDate,
+			 'listeGed' => $listeDocumentAll,
+			 'autorisation' => $autorisationDocument,
+			 ]);
+		}else{
+			return $this->redirectToRoute('authentification');
+		}
     }
-
-
-    #[Route('/deleteUser/{id}', name: 'deleteUser')]
-    public function deleteUser(Request $request, EntityManagerInterface $manager, Utilisateur $id): Response
-     {
-
-     $manager->remove($id);
-     $manager->flush();
-
-     return $this->redirectToRoute('listeUser');
-     }
-
 }
